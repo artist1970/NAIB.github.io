@@ -1,0 +1,34 @@
+{
+  "schema": "naib-public-bridge-contract",
+  "version": 1,
+  "identity": {
+    "id": "naib",
+    "name": "NAIB",
+    "title": "Public Intelligence Director",
+    "role": "front-facing intelligence"
+  },
+  "core": {
+    "canonicalRef": "artist1970/CORE/NAIBCore",
+    "repository": "artist1970/CORE",
+    "path": "NAIBCore",
+    "visibility": "private",
+    "publicBrowserFetch": false,
+    "purpose": "identity, constitution, authority, memory policy, relationships, reconstruction"
+  },
+  "governance": {
+    "steward": "Noema",
+    "humanFinalAuthority": true
+  },
+  "runtimeBridge": {
+    "repository": "artist1970/noema-ai.github.io",
+    "publicUrl": "https://artist1970.github.io/noema-ai.github.io/",
+    "mode": "compatibility-bridge",
+    "migrationRule": "preserve existing runtime until equivalence is verified"
+  },
+  "security": {
+    "publicSecretsAllowed": false,
+    "credentialsAllowed": false,
+    "mfaSecretsAllowed": false,
+    "privateCoreContentAllowed": false
+  }
+}
