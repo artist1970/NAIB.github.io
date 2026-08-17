@@ -4,802 +4,112 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#101827">
-  <meta name="description" content="NAIB — Public Intelligence Director, governed by the NOEMA administrative intelligence layer for research, learning, creativity, family mentors, and specialist systems.">
+  <meta name="description" content="NAIB — Public Intelligence Director for the Verve N Veda ecosystem.">
+  <meta name="naib-core-ref" content="artist1970/CORE/NAIBCore">
+  <meta name="naib-governance-steward" content="Noema">
+  <meta name="naib-runtime-bridge" content="artist1970/noema-ai.github.io">
   <title>NAIB — Public Intelligence Director</title>
-  <link rel="manifest" href="./manifest.webmanifest">
-  <link rel="stylesheet" href="./styles/noema.css">
-  <link rel="stylesheet" href="./styles/noema-ethics.css">
-  <link rel="stylesheet" href="./styles/noema-memory.css">
-  <link rel="stylesheet" href="./styles/noema-enrollment.css">
-  <link rel="stylesheet" href="./styles/noema-avatar.css">
-  <link rel="stylesheet" href="./styles/noema-verifier.css">
-  <link rel="stylesheet" href="./styles/noema-conversation.css">
-  <link rel="stylesheet" href="./styles/noema-orchestration.css">
+
+  <style>
+    :root{
+      color-scheme:dark;
+      --bg:#07101a;
+      --panel:#0f1926;
+      --line:rgba(255,255,255,.13);
+      --ink:#eef4f8;
+      --muted:#9eabb8;
+      --gold:#d8ba78;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;width:100%;height:100%;background:var(--bg);color:var(--ink)}
+    body{font-family:Arial,Helvetica,sans-serif;overflow:hidden}
+    .bridge-shell{height:100%;display:grid;grid-template-rows:auto 1fr}
+    .bridge-bar{
+      min-height:44px;display:flex;align-items:center;justify-content:space-between;gap:16px;
+      padding:8px 14px;background:#08111b;border-bottom:1px solid var(--line)
+    }
+    .identity{display:flex;align-items:center;gap:10px;min-width:0}
+    .mark{
+      width:27px;height:27px;border:1px solid var(--gold);border-radius:50%;
+      display:grid;place-items:center;font-family:Georgia,serif;color:var(--gold)
+    }
+    .identity strong{font-family:Georgia,serif;font-weight:400;letter-spacing:.12em}
+    .identity span,.state{font-size:10px;color:var(--muted)}
+    .state{text-align:right}
+    iframe{display:block;width:100%;height:100%;border:0;background:#08111b}
+    .noscript{padding:2rem;max-width:760px;margin:auto;line-height:1.6}
+    @media(max-width:650px){
+      .bridge-bar{min-height:38px}
+      .identity span,.state{display:none}
+    }
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="ticker" aria-label="NOEMA ecosystem ticker">
-      <div class="ticker-track">
-        <span>NAIB · PUBLIC INTELLIGENCE DIRECTOR</span>
-        <span>VERVE N VEDA · PLERA</span>
-        <span>HOPE · CONVERSATIONAL LINEAGE</span>
-        <span>MOIRAI · VISUAL INTELLIGENCE</span>
-        <span>KHAEMENES · FAMILY &amp; LEARNING</span>
-        <span>PROSE · WRITING</span>
-        <span>ARSHIF · ARCHIVE &amp; REFERENCE</span>
-        <span>THE VERIFIER · RESEARCH</span>
-        <span>PLERA SEARCH · DISCOVERY</span>
-        <span>333 NETWORK · CONNECTION</span>
-
-        <span aria-hidden="true">NAIB · PUBLIC INTELLIGENCE DIRECTOR</span>
-        <span aria-hidden="true">VERVE N VEDA · PLERA</span>
-        <span aria-hidden="true">HOPE · CONVERSATIONAL LINEAGE</span>
-        <span aria-hidden="true">MOIRAI · VISUAL INTELLIGENCE</span>
-        <span aria-hidden="true">KHAEMENES · FAMILY &amp; LEARNING</span>
-        <span aria-hidden="true">PROSE · WRITING</span>
-        <span aria-hidden="true">ARSHIF · ARCHIVE &amp; REFERENCE</span>
-        <span aria-hidden="true">THE VERIFIER · RESEARCH</span>
-        <span aria-hidden="true">PLERA SEARCH · DISCOVERY</span>
-        <span aria-hidden="true">333 NETWORK · CONNECTION</span>
-      </div>
-    </div>
-
-    <div class="utility-bar">
-      <a
-        class="noema-mark"
-        href="./"
-        aria-label="NAIB home"
-        title="NAIB home"
-      >
-        <span class="noema-mark-letter">N</span>
-        <span class="noema-mark-name">NAIB</span>
-      </a>
-
-      <nav class="breadcrumbs" aria-label="Breadcrumb">
-        <a href="https://vervenveda.com/">Verve N Veda</a>
-        <span aria-hidden="true">/</span>
-        <span>PLERA Intelligence</span>
-        <span aria-hidden="true">/</span>
-        <strong>NAIB</strong>
-      </nav>
-
-      <details class="ecosystem-menu">
-        <summary>
-          Ecosystem
-          <span class="chevron" aria-hidden="true">⌄</span>
-        </summary>
-
-        <div class="ecosystem-panel">
-          <div class="ecosystem-label">Core Intelligence</div>
-          <a href="./">NAIB</a>
-          <a href="https://artist1970.github.io/hope-ai.github.io/" target="_blank" rel="noopener">Hope</a>
-          <a href="https://artist1970.github.io/Moir_ai.github.io/" target="_blank" rel="noopener">Moirai</a>
-
-          <div class="ecosystem-label">Learning &amp; Resources</div>
-          <a href="https://vervenveda.com/Khaemenes_Academy.github.io/" target="_blank" rel="noopener">Khaemenes Academy</a>
-          <a href="https://vervenveda.com/proresource_hub.github.io/" target="_blank" rel="noopener">ProReSources</a>
-          <a href="https://vervenveda.com/Arshif.github.io/" target="_blank" rel="noopener">ARSHIF</a>
-
-          <div class="ecosystem-label">Research &amp; Network</div>
-          <a href="https://vervenveda.com/theverifier.github.io/" target="_blank" rel="noopener">The Verifier</a>
-          <a href="https://vervenveda.com/PLERASearch.github.io/" target="_blank" rel="noopener">PLERA Search</a>
-          <a href="https://vervenveda.com/333.github.io/" target="_blank" rel="noopener">333 Network</a>
-
-          <div class="ecosystem-divider"></div>
-          <a class="ecosystem-home" href="https://vervenveda.com/" target="_blank" rel="noopener">
-            Verve N Veda Home ↗
-          </a>
-        </div>
-      </details>
-    </div>
-  </header>
-
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="eyebrow">Verve N Veda · PLERA Intelligence</div>
-      <h1>NAIB</h1>
-      <div class="tagline">Public Intelligence Director</div>
-      <p class="intro">
-        Conversation, learning, research, creative direction, persistent mentors, and specialist coordination
-        through one public intelligence — governed behind the scenes by NOEMA.
-      </p>
-      <a class="hero-enter" href="#noema-workspace">
-        Enter NAIB
-        <span aria-hidden="true">↓</span>
-      </a>
-    </div>
-
-      <div class="naib-admin-boundary" role="note">
-        <strong>NAIB speaks with you.</strong>
-        <span>NOEMA remains the administrative intelligence governing permissions, memory, identity, evidence standards, security, and specialist authority.</span>
-      </div>
-  </section>
-
-  <main class="shell" id="noema-workspace" aria-label="NAIB workspace">
-    <div class="shell-head">
-      <div class="brand">NAIB / v1.1</div>
-      <div class="status">Local-first · Private by design</div>
-    </div>
-
-    <nav class="modes" id="modes" aria-label="NOEMA modes"></nav>
-
-    <section class="workspace">
-      <article class="card conversation">
-        <h2>What are you working on?</h2>
-        <p class="hint" id="modeHint"></p>
-
-        <label class="eyebrow" for="message">Speak with NAIB</label>
-        <textarea
-          id="message"
-          placeholder="Plan something, find a resource, develop an idea, research a topic, work through a decision, or begin a creative project…"
-        ></textarea>
-
-        <div class="actions">
-          <button class="btn primary" id="routeBtn">Continue with NAIB</button>
-          <button class="btn secondary" id="clearBtn">Clear message</button>
-          <button class="btn secondary" id="enrollmentBtn">Identity &amp; Enrollment</button>
-          <button class="btn secondary" id="avatarBtn">Adopt a Mentor</button>
-          <button class="btn secondary" id="verifierBtn">Verifier Agent</button>
-          <button class="btn secondary" id="memoryBtn">Memory &amp; Context</button>
-          <button class="btn secondary" id="eraseBtn">Clear NOEMA local data</button>
-        </div>
-
-
-        <details class="voice-console" id="voiceConsole">
-          <summary>Voice · optional browser controls</summary>
-          <div class="voice-controls">
-            <button class="btn secondary voice-talk" id="voiceTalkBtn" type="button">Push to talk</button>
-            <button class="btn secondary" id="readResponseBtn" type="button">Read response</button>
-            <label>
-              Device voice
-              <select id="noemaVoiceSelect"><option value="">Automatic</option></select>
-            </label>
-            <label>
-              Speaking rate
-              <input id="noemaVoiceRate" type="range" min=".65" max="1.35" step=".05" value=".95">
-            </label>
-            <label>
-              Pitch
-              <input id="noemaVoicePitch" type="range" min=".7" max="1.3" step=".05" value="1">
-            </label>
-          </div>
-          <div class="voice-status" id="voiceStatus">
-            Microphone input starts only when you press Push to talk. Transcripts return here for review and are never auto-sent.
-          </div>
-        </details>
-
-
-        <section class="plan-panel" id="intelligencePlan" hidden aria-label="NAIB coordination plan">
-          <div class="plan-head">
-            <strong>Intelligence Plan</strong>
-            <span id="planSummary">0 tasks</span>
-          </div>
-          <div class="plan-list" id="planList"></div>
-        </section>
-
-        <div class="response" id="response" aria-live="polite"></div>
-      </article>
-
-      <aside class="modules" id="modules" aria-label="Relevant specialist systems"></aside>
-    </section>
-  </main>
-
-  <div class="verifier-drawer" id="verifierDrawer" hidden>
-    <section class="verifier-panel" role="dialog" aria-modal="true" aria-labelledby="verifierHeading">
-      <header class="verifier-head">
+  <div class="bridge-shell">
+    <header class="bridge-bar" aria-label="NAIB public bridge">
+      <div class="identity">
+        <span class="mark" aria-hidden="true">N</span>
         <div>
-          <div class="eyebrow">THE VERIFIER · NOEMA RESEARCH GOVERNANCE</div>
-          <h2 id="verifierHeading">Claim Verification</h2>
-          <p>
-            A ranked search result is not proof. The Verifier separates claims from opinion, seeks primary evidence,
-            searches relevant ecosystem archives and domain portals, looks for independent corroboration and contradiction,
-            checks freshness, and only then assigns an evidence status.
-          </p>
+          <strong>NAIB</strong>
+          <span> · Public Intelligence Director</span>
         </div>
-        <button class="verifier-close" id="verifierClose" type="button" aria-label="Close Verifier Agent">×</button>
-      </header>
-
-      <div class="verifier-layout">
-        <div style="display:grid;gap:1rem">
-          <section class="verifier-card">
-            <h3>What should we verify?</h3>
-            <form class="verifier-form" id="verifierForm">
-              <textarea id="verifierClaim" rows="4" maxlength="5000" required placeholder="Enter a factual claim or research question…"></textarea>
-              <div class="verifier-row">
-                <label>Domain
-                  <select id="verifierDomain">
-                    <option value="auto">Detect automatically</option>
-                    <option value="general">General</option>
-                    <option value="news">News / current events</option>
-                    <option value="historical">History / archives</option>
-                    <option value="education">Education</option>
-                    <option value="science">Science</option>
-                    <option value="medical">Medical / health</option>
-                    <option value="legal">Law / legal</option>
-                    <option value="atmospheric">Atmospheric / weather / space weather</option>
-                  </select>
-                </label>
-                <div style="display:flex;align-items:end">
-                  <button class="btn primary" type="submit" style="width:100%">Build Verification Plan</button>
-                </div>
-              </div>
-            </form>
-          </section>
-
-          <section class="verifier-card">
-            <h3>Evidence lanes</h3>
-            <div class="verifier-lanes" id="verifierLanes">
-              <div class="memory-empty">Create a verification plan to see the required research lanes.</div>
-            </div>
-          </section>
-
-          <section class="verifier-card">
-            <h3>Verification tasks</h3>
-            <div class="verifier-task-list" id="verifierTasks">
-              <div class="memory-empty">No active verification session.</div>
-            </div>
-          </section>
-
-          <section class="verifier-card">
-            <h3>Add evidence</h3>
-            <div class="verifier-form">
-              <div class="verifier-row">
-                <label>Source title<input id="evidenceTitle" maxlength="500"></label>
-                <label>Organization / publisher<input id="evidenceOrganization" maxlength="300"></label>
-              </div>
-              <label>URL / DOI / record location<input id="evidenceUrl" maxlength="1600"></label>
-              <div class="verifier-row">
-                <label>Source level
-                  <select id="evidenceLevel">
-                    <option value="primary">Primary</option>
-                    <option value="secondary" selected>Secondary</option>
-                    <option value="tertiary">Tertiary</option>
-                    <option value="unknown">Unknown</option>
-                  </select>
-                </label>
-                <label>Evidence relationship
-                  <select id="evidenceRelation">
-                    <option value="supporting">Supporting</option>
-                    <option value="opposing">Opposing</option>
-                    <option value="contextual">Contextual</option>
-                    <option value="insufficient">Insufficient / ambiguous</option>
-                  </select>
-                </label>
-              </div>
-              <div class="verifier-row">
-                <label>Independence family<input id="evidenceFamily" maxlength="300" placeholder="Underlying institution / wire / publisher"></label>
-                <label>Region / jurisdiction<input id="evidenceRegion" maxlength="180" placeholder="Example: EU, Kenya, Florida, Global"></label>
-              </div>
-              <div class="verifier-row">
-                <label>Confidence
-                  <select id="evidenceConfidence"><option value="high">High</option><option value="medium" selected>Medium</option><option value="low">Low</option></select>
-                </label>
-                <label>Publication date<input id="evidenceDate" type="date"></label>
-              </div>
-              <label>What does this source establish or contradict?<textarea id="evidenceNotes" rows="3" maxlength="5000"></textarea></label>
-              <button class="btn secondary" id="addEvidenceBtn" type="button">Add Evidence Record</button>
-            </div>
-            <div class="evidence-table" id="verifierEvidence" style="margin-top:.75rem"></div>
-          </section>
-        </div>
-
-        <aside class="verdict-card">
-          <div class="memory-section-kicker">Current evidence status</div>
-          <div class="verdict-seal">
-            <div>
-              <strong id="verifierVerdict">Not yet verified</strong>
-              <span id="verifierDomainLabel">Create a verification plan</span>
-            </div>
-          </div>
-          <div class="verifier-metrics">
-            <div class="verifier-metric"><span>Sources</span><strong id="metricSources">0</strong></div>
-            <div class="verifier-metric"><span>Independent families</span><strong id="metricFamilies">0</strong></div>
-            <div class="verifier-metric"><span>Primary sources</span><strong id="metricPrimary">0</strong></div>
-            <div class="verifier-metric"><span>Required lanes missing</span><strong id="metricMissing">—</strong></div>
-          </div>
-          <div class="verifier-warning" id="verifierWarning">
-            NOEMA does not promise mathematical neutrality from imperfect human information.
-            Instead, the Verifier makes source selection, disagreement, uncertainty, provenance, and evidence gaps visible.
-          </div>
-          <div class="foundry-actions">
-            <button class="btn secondary" id="freshnessVerifiedBtn" type="button">Mark Freshness Checked</button>
-            <button class="btn secondary" id="saveVerificationBtn" type="button">Save Verification</button>
-          </div>
-          <div class="foundry-status" id="verifierStatus" aria-live="polite"></div>
-        </aside>
       </div>
-    </section>
+      <div class="state">CORE governed · Noema runtime bridge · human final authority</div>
+    </header>
+
+    <iframe
+      id="naibRuntime"
+      title="NAIB public intelligence workspace"
+      src="https://artist1970.github.io/noema-ai.github.io/"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allow="microphone"
+    ></iframe>
   </div>
 
+  <noscript>
+    <div class="noscript">
+      NAIB requires JavaScript for the interactive workspace.
+      The canonical public runtime is currently bridged through the existing Noema implementation
+      while NAIB's public front is separated safely from its private CORE.
+    </div>
+  </noscript>
 
-  <div class="avatar-drawer" id="avatarDrawer" hidden>
-    <section class="avatar-panel" role="dialog" aria-modal="true" aria-labelledby="avatarHeading">
-      <header class="avatar-head">
-        <div>
-          <div class="eyebrow">NOEMA Avatar Foundry · Mentor Adoption</div>
-          <h2 id="avatarHeading">Create Your Learning Companion</h2>
-          <p>
-            Build a mentor from features or draw one yourself. A rough drawing is enough:
-            the Foundry can smooth and clean the lines while preserving the original as the source.
-          </p>
-        </div>
-        <button class="avatar-close" id="avatarClose" type="button" aria-label="Close Avatar Foundry">×</button>
-      </header>
-
-      <div class="avatar-layout">
-        <form class="avatar-builder" id="avatarForm">
-          <section class="foundry-section">
-            <h3>1 · Create the character</h3>
-            <div class="creation-tabs">
-              <button type="button" class="creation-tab active" id="partsTab">Build My Mentor</button>
-              <button type="button" class="creation-tab" id="drawTab">Draw My Mentor</button>
-            </div>
-
-            <label>
-              Mentor name
-              <input id="avatarName" maxlength="30" placeholder="Choose a name" required>
-            </label>
-
-            <div class="creation-panel" id="partsPanel">
-              <div class="foundry-grid" style="margin-top:.8rem">
-                <label>Hair style<select id="avatarHairStyle"></select></label>
-                <label>Outfit style<select id="avatarOutfitStyle"></select></label>
-              </div>
-
-              <div style="margin-top:.8rem">
-                <div class="memory-section-kicker">Skin tone</div>
-                <div class="swatch-grid" id="avatarSkinTones"></div>
-              </div>
-              <div style="margin-top:.8rem">
-                <div class="memory-section-kicker">Hair color</div>
-                <div class="swatch-grid" id="avatarHairColors"></div>
-              </div>
-              <div style="margin-top:.8rem">
-                <div class="memory-section-kicker">Eye color</div>
-                <div class="swatch-grid" id="avatarEyeColors"></div>
-              </div>
-              <div class="foundry-grid" style="margin-top:.8rem">
-                <label>Primary clothing color<select id="avatarPrimaryColor"></select></label>
-                <label>Secondary clothing color<select id="avatarSecondaryColor"></select></label>
-              </div>
-            </div>
-
-            <div class="creation-panel" id="drawPanel" hidden>
-              <div class="sketch-stage">
-                <div class="sketch-tools">
-                  <label>Guide
-                    <select id="sketchGuide">
-                      <option value="face">Face</option>
-                      <option value="figure">Figure</option>
-                      <option value="grid">Grid</option>
-                      <option value="none">No guide</option>
-                    </select>
-                  </label>
-                  <label>Guide strength
-                    <select id="sketchGuideStep">
-                      <option value="1">Strong</option>
-                      <option value="2" selected>Light</option>
-                      <option value="3">Very faint</option>
-                    </select>
-                  </label>
-                  <label>Brush size<input id="sketchBrushSize" type="range" min="1" max="18" value="4"></label>
-                  <label>Opacity<input id="sketchOpacity" type="range" min=".15" max="1" step=".05" value="1"></label>
-                  <label>Color<input id="sketchColor" type="color" value="#17243a"></label>
-                  <label>Cleanup
-                    <select id="sketchCleanup">
-                      <option value="gentle">Gentle</option>
-                      <option value="balanced" selected>Balanced</option>
-                      <option value="polished">More polished</option>
-                    </select>
-                  </label>
-                </div>
-
-                <div class="sketch-tool-row">
-                  <button type="button" class="mini-btn" id="sketchEraser">Eraser</button>
-                  <button type="button" class="mini-btn" id="sketchSymmetry">Symmetry Assist</button>
-                  <button type="button" class="mini-btn" id="sketchUndo">↶ Undo</button>
-                  <button type="button" class="mini-btn" id="sketchRedo">↷ Redo</button>
-                  <button type="button" class="mini-btn" id="sketchClear">Clear</button>
-                  <button type="button" class="mini-btn" id="sketchRefine">Clean Up Lines</button>
-                  <button type="button" class="mini-btn" id="sketchSave">Save Drawing</button>
-                </div>
-
-                <div class="sketch-canvas-shell">
-                  <canvas id="mentorGuideCanvas"></canvas>
-                  <canvas id="mentorSketchCanvas"></canvas>
-                </div>
-
-                <div class="sketch-compare">
-                  <div class="sketch-compare-card">
-                    <div class="memory-section-kicker">Original</div>
-                    <canvas id="originalPreviewCanvas" width="420" height="360"></canvas>
-                  </div>
-                  <div class="sketch-compare-card">
-                    <div class="memory-section-kicker">Cleaned</div>
-                    <canvas id="refinedPreviewCanvas" width="420" height="360"></canvas>
-                  </div>
-                </div>
-
-                <div class="sketch-note">
-                  Inspired by Bazaar Art's Trace &amp; Draw, Sketch Lab, Studio Sketch, and Chromatic Foundry:
-                  the guide is separate from your drawing, your original strokes are preserved, cleanup is reversible,
-                  and future Moirai refinement must remain faithful to the source drawing.
-                </div>
-              </div>
-            </div>
-
-            <div class="appearance-boundary">
-              Appearance and drawing style are creative expression only. They are never used to infer race,
-              ethnicity, intelligence, personality, academic ability, disciplinary risk, politics, religion,
-              socioeconomic status, or psychological condition.
-            </div>
-          </section>
-
-          <section class="foundry-section">
-            <h3>2 · Personality</h3>
-            <div class="foundry-grid">
-              <label>Primary temperament<select id="avatarTemperament"></select></label>
-              <label>Voice character
-                <select id="avatarVoiceStyle">
-                  <option value="warm">Warm</option>
-                  <option value="calm">Calm</option>
-                  <option value="bright">Bright</option>
-                  <option value="measured">Measured</option>
-                  <option value="expressive">Expressive</option>
-                  <option value="neutral">Neutral</option>
-                </select>
-              </label>
-            </div>
-            <div style="margin-top:.8rem">
-              <div class="memory-section-kicker">Choose up to four traits</div>
-              <div class="choice-grid" id="avatarTraits"></div>
-            </div>
-          </section>
-
-          <section class="foundry-section">
-            <h3>3 · Shared interests</h3>
-            <p class="hint">Choose interests you would enjoy sharing with your mentor. These are preference signals, not personality diagnoses.</p>
-            <div class="choice-grid" id="avatarInterests"></div>
-          </section>
-
-          <section class="foundry-section">
-            <h3>4 · How should your mentor work with you?</h3>
-            <div class="choice-grid" id="avatarCollaboration"></div>
-          </section>
-
-          <section class="foundry-section">
-            <h3>5 · Voice</h3>
-            <div class="foundry-grid three">
-              <label>Speaking pace<input id="avatarVoiceRate" type="range" min=".65" max="1.35" step=".05" value=".95"></label>
-              <label>Pitch<input id="avatarVoicePitch" type="range" min=".7" max="1.3" step=".05" value="1"></label>
-              <label>Device voice<select id="avatarBrowserVoice"><option value="">Automatic</option></select></label>
-            </div>
-            <div class="sketch-note">
-              Speech output uses the browser's available voices. Listening is not continuous:
-              future voice input remains push-to-talk only.
-            </div>
-          </section>
-
-          <div class="foundry-actions">
-            <button type="button" class="btn secondary" id="saveAvatarDraftBtn">Save Design</button>
-            <button type="button" class="btn secondary" id="hearMentorBtn">Hear Introduction</button>
-            <button type="submit" class="btn primary">Adopt This Mentor</button>
-          </div>
-          <div class="foundry-status" id="avatarStatus" aria-live="polite"></div>
-        </form>
-
-        <aside class="avatar-preview-card">
-          <span class="adoption-badge" id="avatarAdoptionBadge">Designing</span>
-          <div class="avatar-preview" id="avatarPreview"></div>
-          <div class="avatar-preview-meta">
-            <h3 id="avatarPreviewName">My Mentor</h3>
-            <p id="avatarPreviewDescription">Choose a temperament and traits to shape how your mentor works with you.</p>
-          </div>
-          <div class="server-seam">
-            <strong>NOEMA Supervision</strong>
-            <p>
-              This mentor receives a stable mentor ID and operates under NOEMA's Constitution,
-              guardian pathway, capability boundaries, and resource permissions.
-            </p>
-            <span class="server-pill">Permissions cannot be changed here</span>
-          </div>
-        </aside>
-      </div>
-    </section>
-  </div>
-
-
-  <div class="enrollment-drawer" id="enrollmentDrawer" hidden>
-    <section class="enrollment-panel" role="dialog" aria-modal="true" aria-labelledby="enrollmentHeading">
-      <header class="enrollment-head">
-        <div>
-          <div class="eyebrow">Identity Spine · Local Prototype</div>
-          <h2 id="enrollmentHeading">Identity &amp; Enrollment</h2>
-          <p>
-            Create the local identity profile that a future secure NOEMA account server can synchronize.
-            No password or authentication secret is collected by this GitHub Pages build.
-          </p>
-        </div>
-        <button class="enrollment-close" id="enrollmentClose" type="button" aria-label="Close enrollment">×</button>
-      </header>
-
-      <div class="enrollment-layout">
-        <section class="enrollment-card">
-          <h3>Person &amp; Learning Profile</h3>
-          <form class="enrollment-form" id="enrollmentForm">
-            <div class="enrollment-row">
-              <label>
-                Display name
-                <input id="enrollDisplayName" maxlength="60" required placeholder="The name you want Noema to use">
-              </label>
-              <label>
-                Education setting
-                <select id="enrollEducationSetting">
-                  <option value="preschool">Preschool</option>
-                  <option value="k12-school">K–12 school</option>
-                  <option value="homeschool">Homeschool</option>
-                  <option value="college">College</option>
-                  <option value="higher-learning">Higher learning</option>
-                  <option value="professional">Professional learning</option>
-                  <option value="independent">Independent study</option>
-                  <option value="not-currently-enrolled">Not currently enrolled</option>
-                </select>
-              </label>
-            </div>
-
-            <div class="enrollment-row three">
-              <label>
-                Birth month
-                <select id="enrollBirthMonth" required>
-                  <option value="">Month</option>
-                  <option value="1">January</option><option value="2">February</option>
-                  <option value="3">March</option><option value="4">April</option>
-                  <option value="5">May</option><option value="6">June</option>
-                  <option value="7">July</option><option value="8">August</option>
-                  <option value="9">September</option><option value="10">October</option>
-                  <option value="11">November</option><option value="12">December</option>
-                </select>
-              </label>
-              <label>
-                Birth year
-                <input id="enrollBirthYear" type="number" min="1900" required inputmode="numeric" placeholder="Year">
-              </label>
-              <label>
-                Grade / stage
-                <select id="enrollGrade">
-                  <option value="preschool">Preschool</option>
-                  <option value="kindergarten">Kindergarten</option>
-                  <option value="grade-01">Grade 1</option><option value="grade-02">Grade 2</option>
-                  <option value="grade-03">Grade 3</option><option value="grade-04">Grade 4</option>
-                  <option value="grade-05">Grade 5</option><option value="grade-06">Grade 6</option>
-                  <option value="grade-07">Grade 7</option><option value="grade-08">Grade 8</option>
-                  <option value="grade-09">Grade 9</option><option value="grade-10">Grade 10</option>
-                  <option value="grade-11">Grade 11</option><option value="grade-12">Grade 12</option>
-                  <option value="college">College</option>
-                  <option value="graduate">Graduate</option>
-                  <option value="professional">Professional</option>
-                  <option value="adult-continuing">Adult continuing education</option>
-                  <option value="independent">Independent study</option>
-                  <option value="not-applicable">Not applicable</option>
-                </select>
-              </label>
-            </div>
-
-            <div class="enrollment-row">
-              <label>
-                Current learning stage
-                <input id="enrollLearningStage" maxlength="80" placeholder="Example: Algebra II, early reading, college biology">
-              </label>
-              <label>
-                Favorite subject
-                <select id="enrollFavoriteSubject">
-                  <option value="not-sure-yet">Not sure yet</option>
-                  <option value="mathematics">Mathematics</option>
-                  <option value="science">Science</option>
-                  <option value="language-arts">Language Arts / Reading</option>
-                  <option value="social-studies">Social Studies</option>
-                  <option value="history">History</option>
-                  <option value="art">Art</option>
-                  <option value="music">Music</option>
-                  <option value="technology">Technology</option>
-                  <option value="languages">Languages</option>
-                  <option value="physical-education">Physical Education</option>
-                  <option value="not-applicable">Not applicable</option>
-                </select>
-              </label>
-            </div>
-
-            <div>
-              <div class="memory-section-kicker">A few interests</div>
-              <div class="interest-grid" id="enrollInterests">
-                <label class="interest-option"><input type="checkbox" value="music"> Music</label>
-                <label class="interest-option"><input type="checkbox" value="cooking"> Cooking</label>
-                <label class="interest-option"><input type="checkbox" value="reading"> Reading</label>
-                <label class="interest-option"><input type="checkbox" value="art"> Art</label>
-                <label class="interest-option"><input type="checkbox" value="writing"> Writing</label>
-                <label class="interest-option"><input type="checkbox" value="science"> Science</label>
-                <label class="interest-option"><input type="checkbox" value="mathematics"> Mathematics</label>
-                <label class="interest-option"><input type="checkbox" value="history"> History</label>
-                <label class="interest-option"><input type="checkbox" value="nature"> Nature</label>
-                <label class="interest-option"><input type="checkbox" value="animals"> Animals</label>
-                <label class="interest-option"><input type="checkbox" value="space"> Space</label>
-                <label class="interest-option"><input type="checkbox" value="technology"> Technology</label>
-                <label class="interest-option"><input type="checkbox" value="building"> Building</label>
-                <label class="interest-option"><input type="checkbox" value="games"> Games</label>
-                <label class="interest-option"><input type="checkbox" value="sports"> Sports</label>
-                <label class="interest-option"><input type="checkbox" value="languages"> Languages</label>
-              </div>
-            </div>
-
-            <div class="enrollment-note">
-              <strong>Age and learning level are separate.</strong>
-              Age selects the account/guardian pathway. It never determines intelligence, ability, course difficulty, or academic potential.
-              Avatar appearance will be stored separately and will not be used for learner inference.
-            </div>
-
-            <button class="btn primary" type="submit">Save Local Enrollment Profile</button>
-            <div class="enrollment-message" id="enrollmentMessage" aria-live="polite"></div>
-          </form>
-        </section>
-
-        <aside class="enrollment-card">
-          <div class="memory-section-kicker">Identity status</div>
-          <h3>Persistent Relationship Spine</h3>
-          <div id="identitySummary" class="identity-summary"></div>
-
-          <div class="server-seam">
-            <strong>Future Secure Account Server</strong>
-            <p>
-              This release includes a server adapter and HTTPS-only configuration seam.
-              It is disabled until a real account host is deliberately connected.
-              Authentication secrets are never stored in this public application.
-            </p>
-            <span class="server-pill" id="serverStatusPill">Local only</span>
-          </div>
-        </aside>
-      </div>
-    </section>
-  </div>
-
-
-  <div class="memory-drawer" id="memoryDrawer" hidden>
-    <section class="memory-panel" role="dialog" aria-modal="true" aria-labelledby="memoryHeading">
-      <header class="memory-panel-head">
-        <div>
-          <div class="eyebrow">Visible · Editable · Removable</div>
-          <h2 id="memoryHeading">Memory &amp; Context</h2>
-          <p>
-            Conversation does not automatically become long-term memory.
-            Only items explicitly saved here enter NOEMA's Memory Library.
-          </p>
-        </div>
-        <button class="memory-close" id="memoryClose" type="button" aria-label="Close memory panel">×</button>
-      </header>
-
-      <div class="memory-grid">
-        <section class="memory-section">
-          <div class="memory-section-head">
-            <div>
-              <span class="memory-section-kicker">Long-term memory</span>
-              <h3>Memory Library</h3>
-            </div>
-            <div class="memory-tools">
-              <span id="memoryCount">0 retained</span>
-              <button type="button" class="mini-btn" id="exportMemoryBtn">Export JSON</button>
-            </div>
-          </div>
-
-          <form class="memory-form" id="memoryForm">
-            <div class="memory-form-row">
-              <label>
-                Title
-                <input id="memoryTitle" maxlength="120" placeholder="A useful label">
-              </label>
-              <label>
-                Kind
-                <select id="memoryKind">
-                  <option value="preference">Preference</option>
-                  <option value="project">Project</option>
-                  <option value="goal">Goal</option>
-                  <option value="decision">Decision</option>
-                  <option value="reference">Reference</option>
-                  <option value="continuity">Continuity</option>
-                </select>
-              </label>
-              <label>
-                Scope
-                <select id="memoryScope">
-                  <option value="personal">Personal</option>
-                  <option value="family">Family</option>
-                  <option value="learning">Learning</option>
-                  <option value="research">Research</option>
-                  <option value="creative">Creative</option>
-                  <option value="work">Work</option>
-                  <option value="civic">Civic</option>
-                  <option value="archive">Archive</option>
-                  <option value="global">Global</option>
-                </select>
-              </label>
-            </div>
-
-            <label>
-              What should Noema remember?
-              <textarea id="memoryContent" maxlength="1600" required placeholder="Store only something you intentionally want available in future context."></textarea>
-            </label>
-
-            <label>
-              Tags <span class="soft-label">comma separated</span>
-              <input id="memoryTags" placeholder="design, mathematics, preference">
-            </label>
-
-            <div class="memory-save-row">
-              <button class="btn primary" type="submit">Save to Memory</button>
-              <span id="memoryStatus" class="memory-status" aria-live="polite"></span>
-            </div>
-          </form>
-
-          <div id="memoryList" class="memory-list"></div>
-        </section>
-
-        <aside class="memory-section project-section">
-          <div class="memory-section-head">
-            <div>
-              <span class="memory-section-kicker">Working context</span>
-              <h3>Projects</h3>
-            </div>
-            <span class="active-project-pill" id="activeProjectLabel">No active project</span>
-          </div>
-
-          <form id="projectForm" class="project-form">
-            <label>
-              Project name
-              <input id="projectTitle" maxlength="100" required placeholder="NOEMA, Mathematics, Campaign site…">
-            </label>
-            <label>
-              Project summary
-              <textarea id="projectSummary" maxlength="900" placeholder="What is this project trying to accomplish?"></textarea>
-            </label>
-            <label>
-              Primary mode
-              <select id="projectMode">
-                <option value="personal">Personal</option>
-                <option value="family">Family</option>
-                <option value="learning">Learning</option>
-                <option value="research">Research</option>
-                <option value="creative">Creative</option>
-                <option value="work">Work</option>
-                <option value="civic">Civic</option>
-                <option value="archive">Archive</option>
-              </select>
-            </label>
-            <button class="btn primary" type="submit">Create Project Context</button>
-          </form>
-
-          <div id="projectList" class="project-list"></div>
-
-          <div class="memory-explainer">
-            <strong>Three layers of continuity</strong>
-            <div><span>1</span> Current conversation — working context</div>
-            <div><span>2</span> Recent continuity — bounded local buffer</div>
-            <div><span>3</span> Memory Library — explicitly retained</div>
-          </div>
-        </aside>
-      </div>
-    </section>
-  </div>
-
-
-  <footer>
-    Jennifer Kay Pearl · Verve N Veda · PLERA · Khaemenes Academy
-  </footer>
-
-  <script type="module" src="./app/noema-app.js"></script>
   <script>
-    if ("serviceWorker" in navigator) {
-      addEventListener("load", () => {
-        navigator.serviceWorker.register("./service-worker.js").catch(() => {});
-      });
-    }
+    /*
+      NAIB PUBLIC BRIDGE CONTRACT
+
+      IMPORTANT:
+      - coreRef is a canonical governance reference only.
+      - This public browser does NOT fetch the private CORE repository.
+      - The working runtime remains in Noema during migration.
+      - Do not place credentials, private keys, MFA secrets, or protected CORE data here.
+    */
+    window.NAIB_PUBLIC_BRIDGE = Object.freeze({
+      version: "1.0.0",
+      identity: Object.freeze({
+        id: "naib",
+        name: "NAIB",
+        title: "Public Intelligence Director",
+        role: "front-facing intelligence"
+      }),
+      core: Object.freeze({
+        repository: "artist1970/CORE",
+        path: "NAIBCore",
+        canonicalRef: "artist1970/CORE/NAIBCore",
+        access: "private",
+        browserFetchAllowed: false
+      }),
+      governance: Object.freeze({
+        steward: "Noema",
+        humanFinalAuthority: true,
+        permissionSelfElevation: false
+      }),
+      runtime: Object.freeze({
+        repository: "artist1970/noema-ai.github.io",
+        publicUrl: "https://artist1970.github.io/noema-ai.github.io/",
+        mode: "compatibility-bridge"
+      })
+    });
   </script>
 </body>
 </html>
