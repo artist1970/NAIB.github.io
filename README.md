@@ -1,32 +1,37 @@
-# NAIB Public Front — Compatibility Bridge
+# NAIB Private Studio
 
-This repository is the canonical **public front door** for NAIB.
+Private/local-first working studio for NAIB.
 
-## Current migration state
+## Canonical architecture
 
-`NAIB.github.io` presents the public entry point while the existing working NAIB runtime remains hosted inside `artist1970/noema-ai.github.io`.
+- Public NAIB front: `artist1970/NAIB.github.io`
+- Private governing CORE: `artist1970/CORE/NAIBCore`
+- Internal governance/runtime: `artist1970/noema-ai.github.io`
 
-This avoids copying or breaking Noema/NAIB dependencies during migration.
+## Important security distinction
 
-## Canonical relationships
+A **private GitHub repository is not automatically a secure application backend**.
 
-- Public front: `artist1970/NAIB.github.io`
-- Private identity/governance CORE: `artist1970/CORE/NAIBCore`
-- Current runtime bridge: `artist1970/noema-ai.github.io`
+If this Studio is opened as browser-delivered HTML, users with access can inspect its source. Therefore this package intentionally contains:
 
-## Private CORE rule
+- no credentials
+- no API tokens
+- no MFA secrets
+- no private keys
+- no signing secrets
+- no raw private CORE content
 
-The public site records the canonical CORE reference but **must never fetch the private CORE directly from browser JavaScript**.
+The Studio stores voluntary working notes locally in the browser and can export them as JSON.
 
-The CORE governs identity and policy through protected architecture. It is not a public data API.
+## Purpose
 
-## Migration rule
+The Studio is for:
 
-Do not delete or relocate the existing Noema-side NAIB runtime until:
-1. every dependency is mapped;
-2. the replacement public runtime is verified;
-3. specialist routing is verified;
-4. local memory/enrollment behavior is preserved or deliberately migrated;
-5. Noema governance equivalence is confirmed.
+- continuity and migration checks
+- public/private contract review
+- specialist relationship visibility
+- local working context
+- audit notes
+- future protected-service integration
 
-**The human remains the final authority.**
+It is not NAIB's public identity and it does not replace the Noema internal runtime.

@@ -1,0 +1,57 @@
+{
+  "schema": "naib-studio-connections",
+  "version": 1,
+  "connections": [
+    {
+      "id": "public-front",
+      "target": "artist1970/NAIB.github.io",
+      "relationship": "canonical-public-front"
+    },
+    {
+      "id": "private-core",
+      "target": "artist1970/CORE/NAIBCore",
+      "relationship": "identity-governance",
+      "browser_fetch": false
+    },
+    {
+      "id": "runtime",
+      "target": "artist1970/noema-ai.github.io",
+      "relationship": "internal-governance-runtime"
+    },
+    {
+      "id": "archaemenes",
+      "target": "Archaemenes",
+      "relationship": "specialist-learning"
+    },
+    {
+      "id": "zelle",
+      "target": "Zelle",
+      "relationship": "specialist-art"
+    },
+    {
+      "id": "moirai",
+      "target": "Moirai",
+      "relationship": "specialist-music"
+    },
+    {
+      "id": "aurora",
+      "target": "Aurora",
+      "relationship": "specialist-wellbeing-health"
+    },
+    {
+      "id": "arshif",
+      "target": "Arshif",
+      "relationship": "specialist-archive-reference"
+    },
+    {
+      "id": "eiren",
+      "target": "Eiren",
+      "relationship": "specialist-literature"
+    },
+    {
+      "id": "hope",
+      "target": "Hope",
+      "relationship": "specialist-civic-compassion"
+    }
+  ]
+}
