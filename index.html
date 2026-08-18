@@ -1,351 +1,115 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#0a1420">
-<meta name="description" content="NAIB Private Studio — protected local-first workspace for NAIB administration, continuity, and specialist coordination.">
-<title>NAIB Private Studio</title>
-<style>
-:root{
-  --bg:#071019;--panel:#0d1823;--panel2:#101d2a;--line:rgba(255,255,255,.12);
-  --text:#eef4f8;--muted:#98a7b4;--gold:#d8ba78;--gold2:#f0d699;--safe:#88c79a;
-  --warn:#ddb15f;--danger:#d77a6d;--max:1220px
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;min-height:100vh;background:linear-gradient(180deg,#0a1420,#071019 72%);color:var(--text);font-family:Arial,Helvetica,sans-serif}
-button,input,textarea,select{font:inherit}
-a{color:inherit}
-.wrap{width:min(var(--max),calc(100% - 28px));margin:auto}
-header{position:sticky;top:0;z-index:20;background:rgba(7,15,24,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.nav{min-height:64px;display:flex;align-items:center;justify-content:space-between;gap:18px}
-.brand{display:flex;align-items:center;gap:11px}
-.mark{width:34px;height:34px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;color:var(--gold2)}
-.brand strong{font-family:Georgia,serif;font-weight:400;letter-spacing:.12em}
-.brand small{display:block;color:var(--muted);font-size:9px;letter-spacing:.11em;text-transform:uppercase;margin-top:3px}
-.status-pill{font-size:10px;color:var(--safe);border:1px solid rgba(136,199,154,.35);padding:6px 9px;border-radius:999px}
-.hero{padding:60px 0 34px}
-.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:18px;align-items:stretch}
-.hero-card,.card{border:1px solid var(--line);background:linear-gradient(180deg,#0e1a26,#0a141e);border-radius:16px}
-.hero-card{padding:28px}
-.eyebrow{color:var(--gold);font-size:10px;letter-spacing:.18em;text-transform:uppercase}
-h1{font-family:Georgia,serif;font-size:clamp(40px,6vw,70px);font-weight:400;margin:10px 0 12px}
-.hero p{color:#b8c3ca;line-height:1.7;max-width:760px}
-.boundary{padding:18px;display:grid;gap:10px}
-.boundary-row{display:grid;grid-template-columns:120px 1fr;gap:12px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.07)}
-.boundary-row:last-child{border-bottom:0}
-.boundary-row span{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
-.boundary-row strong{font-size:12px;font-weight:600}
-.section{padding:28px 0 58px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.card{padding:20px}
-.card h2,.card h3{font-family:Georgia,serif;font-weight:400;margin:0 0 10px}
-.card h2{font-size:26px}.card h3{font-size:20px}
-.card p{color:var(--muted);font-size:12px;line-height:1.65}
-.kv{display:grid;gap:8px;margin-top:14px}
-.kv div{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:11px}
-.kv span{color:var(--muted)}
-.good{color:var(--safe)}.warn{color:var(--warn)}.danger{color:var(--danger)}
-.btn{min-height:42px;border-radius:8px;border:1px solid var(--line);background:#132233;color:white;padding:0 14px;cursor:pointer}
-.btn.primary{background:var(--gold);color:#17120b;border-color:transparent;font-weight:700}
-.btn.ghost{background:transparent}
-.btn:disabled{opacity:.42;cursor:not-allowed}
-.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
-textarea,input,select{width:100%;border:1px solid var(--line);background:#08121b;color:white;border-radius:8px;padding:11px}
-textarea{min-height:110px;resize:vertical}
-label{display:grid;gap:6px;font-size:10px;color:var(--muted);margin-top:11px}
-.specialists{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:13px}
-.specialist{padding:12px;border:1px solid rgba(255,255,255,.09);border-radius:10px;background:#0a141e}
-.specialist strong{display:block;font-family:Georgia,serif;font-weight:400;color:#ead7ae}
-.specialist span{font-size:10px;color:var(--muted)}
-.log{max-height:250px;overflow:auto;background:#071019;border:1px solid var(--line);border-radius:9px;padding:11px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:10px;color:#aebac2;white-space:pre-wrap}
-.notice{padding:13px;border-left:2px solid var(--gold);background:rgba(216,186,120,.06);color:#aeb9c0;font-size:11px;line-height:1.65;margin-top:14px}
-.footer{padding:28px 0 42px;text-align:center;color:#72818d;font-size:10px;border-top:1px solid rgba(255,255,255,.06)}
-@media(max-width:900px){.hero-grid,.grid{grid-template-columns:1fr}.specialists{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:560px){.specialists{grid-template-columns:1fr}.status-pill{display:none}.boundary-row{grid-template-columns:1fr}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#101827">
+  <meta name="description" content="NAIB — Public Intelligence Director for the Verve N Veda ecosystem.">
+  <meta name="naib-core-ref" content="artist1970/CORE/NAIBCore">
+  <meta name="naib-governance-steward" content="Noema">
+  <meta name="naib-runtime-bridge" content="artist1970/noema-ai.github.io">
+  <title>NAIB — Public Intelligence Director</title>
+
+  <style>
+    :root{
+      color-scheme:dark;
+      --bg:#07101a;
+      --panel:#0f1926;
+      --line:rgba(255,255,255,.13);
+      --ink:#eef4f8;
+      --muted:#9eabb8;
+      --gold:#d8ba78;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;width:100%;height:100%;background:var(--bg);color:var(--ink)}
+    body{font-family:Arial,Helvetica,sans-serif;overflow:hidden}
+    .bridge-shell{height:100%;display:grid;grid-template-rows:auto 1fr}
+    .bridge-bar{
+      min-height:44px;display:flex;align-items:center;justify-content:space-between;gap:16px;
+      padding:8px 14px;background:#08111b;border-bottom:1px solid var(--line)
+    }
+    .identity{display:flex;align-items:center;gap:10px;min-width:0}
+    .mark{
+      width:27px;height:27px;border:1px solid var(--gold);border-radius:50%;
+      display:grid;place-items:center;font-family:Georgia,serif;color:var(--gold)
+    }
+    .identity strong{font-family:Georgia,serif;font-weight:400;letter-spacing:.12em}
+    .identity span,.state{font-size:10px;color:var(--muted)}
+    .state{text-align:right}
+    iframe{display:block;width:100%;height:100%;border:0;background:#08111b}
+    .noscript{padding:2rem;max-width:760px;margin:auto;line-height:1.6}
+    @media(max-width:650px){
+      .bridge-bar{min-height:38px}
+      .identity span,.state{display:none}
+    }
+  </style>
 </head>
 <body>
-<header>
-  <div class="wrap nav">
-    <div class="brand">
-      <span class="mark">N</span>
-      <span><strong>NAIB PRIVATE STUDIO</strong><small>protected workspace · local-first</small></span>
+  <div class="bridge-shell">
+    <header class="bridge-bar" aria-label="NAIB public bridge">
+      <div class="identity">
+        <span class="mark" aria-hidden="true">N</span>
+        <div>
+          <strong>NAIB</strong>
+          <span> · Public Intelligence Director</span>
+        </div>
+      </div>
+      <div class="state">CORE governed · Noema runtime bridge · human final authority</div>
+    </header>
+
+    <iframe
+      id="naibRuntime"
+      title="NAIB public intelligence workspace"
+      src="https://artist1970.github.io/noema-ai.github.io/"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allow="microphone"
+    ></iframe>
+  </div>
+
+  <noscript>
+    <div class="noscript">
+      NAIB requires JavaScript for the interactive workspace.
+      The canonical public runtime is currently bridged through the existing Noema implementation
+      while NAIB's public front is separated safely from its private CORE.
     </div>
-    <span class="status-pill">Private Studio · no public identity surface</span>
-  </div>
-</header>
+  </noscript>
 
-<main>
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div class="hero-card">
-      <div class="eyebrow">Protected workspace</div>
-      <h1>NAIB Studio</h1>
-      <p>
-        A private working room for continuity, configuration review, specialist coordination,
-        migration checks, and user-authorized local context. This Studio does not replace NAIB's
-        public front and does not expose the private CORE.
-      </p>
-      <div class="notice">
-        This build intentionally contains no credentials, tokens, MFA secrets, signing keys, or private CORE contents.
-        A private repository is useful for source control, but browser-delivered files should still be treated as inspectable.
-      </div>
-    </div>
+  <script>
+    /*
+      NAIB PUBLIC BRIDGE CONTRACT
 
-    <aside class="hero-card boundary">
-      <div class="boundary-row"><span>Public Front</span><strong>artist1970/NAIB.github.io</strong></div>
-      <div class="boundary-row"><span>Private CORE</span><strong>artist1970/CORE/NAIBCore</strong></div>
-      <div class="boundary-row"><span>Runtime</span><strong>artist1970/noema-ai.github.io</strong></div>
-      <div class="boundary-row"><span>Authority</span><strong>Human final authority</strong></div>
-      <div class="boundary-row"><span>Storage</span><strong>Local browser only</strong></div>
-    </aside>
-  </div>
-</section>
-
-<section class="section">
-  <div class="wrap grid">
-    <article class="card">
-      <div class="eyebrow">Connection map</div>
-      <h2>Canonical Relationships</h2>
-      <div class="kv">
-        <div><span>NAIB public front</span><b class="good">canonical</b></div>
-        <div><span>NAIBCore</span><b class="good">governing reference</b></div>
-        <div><span>Internal runtime</span><b class="good">connected by contract</b></div>
-        <div><span>Direct CORE browser fetch</span><b class="danger">blocked</b></div>
-        <div><span>Permission self-elevation</span><b class="danger">blocked</b></div>
-      </div>
-      <div class="actions">
-        <a class="btn primary" href="https://artist1970.github.io/NAIB.github.io/" target="_blank" rel="noopener">Open Public NAIB</a>
-        <a class="btn" href="https://artist1970.github.io/noema-ai.github.io/" target="_blank" rel="noopener">Open Gateway</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="eyebrow">Continuity</div>
-      <h2>Studio Context</h2>
-      <p>Save only information you intentionally want retained in this browser. This is not a secret vault.</p>
-      <label>Working note
-        <textarea id="studioNote" placeholder="Project context, migration note, coordination reminder…"></textarea>
-      </label>
-      <div class="actions">
-        <button class="btn primary" id="saveNoteBtn">Save locally</button>
-        <button class="btn" id="clearNoteBtn">Clear</button>
-        <button class="btn" id="exportBtn">Export Studio JSON</button>
-      </div>
-      <div class="notice" id="noteStatus">No Studio note saved yet.</div>
-    </article>
-
-    <article class="card">
-      <div class="eyebrow">Migration guard</div>
-      <h2>Do Not Break</h2>
-      <div class="kv">
-        <div><span>Existing NAIB facade</span><b class="good">preserve</b></div>
-        <div><span>Existing specialist routing</span><b class="good">preserve</b></div>
-        <div><span>Existing Noema runtime</span><b class="good">preserve</b></div>
-        <div><span>Legacy public sanitizer</span><b class="warn">compatibility</b></div>
-        <div><span>Old entry routes</span><b class="warn">verify before retire</b></div>
-      </div>
-      <div class="actions">
-        <button class="btn" id="runAuditBtn">Run local contract audit</button>
-      </div>
-    </article>
-  </div>
-</section>
-
-<section class="section">
-  <div class="wrap">
-    <div class="card">
-      <div class="eyebrow">Specialist relationships</div>
-      <h2>NAIB Coordination Directory</h2>
-      <p>These are identity-preserving handoff relationships. NAIB coordinates; specialists remain distinct.</p>
-      <div class="specialists" id="specialists"></div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="wrap grid">
-    <article class="card">
-      <div class="eyebrow">Public contract</div>
-      <h2>Front-Door Rules</h2>
-      <div class="kv">
-        <div><span>Public identity</span><b>NAIB</b></div>
-        <div><span>CORE exposed</span><b class="danger">no</b></div>
-        <div><span>Internal admin name exposed</span><b class="danger">no</b></div>
-        <div><span>Specialist identity flattened</span><b class="danger">no</b></div>
-        <div><span>Human final authority</span><b class="good">yes</b></div>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="eyebrow">Studio permissions</div>
-      <h2>Authority Boundary</h2>
-      <p>The Studio can prepare and record local planning information. It does not grant itself repository, account, identity, or governance permissions.</p>
-      <div class="actions">
-        <button class="btn" disabled>Rotate credentials</button>
-        <button class="btn" disabled>Change permissions</button>
-        <button class="btn" disabled>Modify CORE</button>
-      </div>
-      <div class="notice">High-impact administration must occur through separately authorized protected tooling.</div>
-    </article>
-
-    <article class="card">
-      <div class="eyebrow">Audit log</div>
-      <h2>Local Studio Events</h2>
-      <div class="log" id="auditLog">Studio initialized.</div>
-      <div class="actions">
-        <button class="btn ghost" id="clearLogBtn">Clear log</button>
-      </div>
-    </article>
-  </div>
-</section>
-</main>
-
-<footer class="footer">
-  NAIB Private Studio · local-first · protected architecture · human final authority
-</footer>
-
-<script>
-const STORAGE_KEY = "naib_private_studio_v1";
-
-const specialistData = [
-  ["Archaemenes","Academy mentor","learning, school pathways, academic guidance"],
-  ["Zelle","Art","visual art, drawing, painting, creative practice"],
-  ["Moirai","Music","music, sound, theory, composition"],
-  ["Aurora","Wellbeing & Health","wellness and health-oriented resources"],
-  ["Arshif","Librarian / Archive","archives, history, research, reference"],
-  ["Eiren","Literature","reading, literature, writing, language"],
-  ["Hope","Civic & Compassion","civic resources and compassionate interaction"],
-  ["The Verifier","Evidence","research verification and evidence status"]
-];
-
-const canonical = Object.freeze({
-  publicFront: "artist1970/NAIB.github.io",
-  privateCore: "artist1970/CORE/NAIBCore",
-  runtime: "artist1970/noema-ai.github.io",
-  humanFinalAuthority: true,
-  privateCoreBrowserFetchAllowed: false,
-  permissionSelfElevation: false
-});
-
-const state = {
-  note: "",
-  events: []
-};
-
-function loadState() {
-  try {
-    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
-    state.note = typeof saved.note === "string" ? saved.note : "";
-    state.events = Array.isArray(saved.events) ? saved.events.slice(-80) : [];
-  } catch {}
-}
-
-function persist() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify({
-    version: 1,
-    updatedAt: new Date().toISOString(),
-    note: state.note,
-    events: state.events.slice(-80)
-  }));
-}
-
-function log(message) {
-  state.events.push({ at: new Date().toISOString(), message });
-  state.events = state.events.slice(-80);
-  persist();
-  renderLog();
-}
-
-function renderLog() {
-  const el = document.querySelector("#auditLog");
-  const lines = state.events.length
-    ? state.events.map(e => `[${e.at}] ${e.message}`)
-    : ["No local Studio events."];
-  el.textContent = lines.join("\n");
-}
-
-function renderSpecialists() {
-  document.querySelector("#specialists").innerHTML = specialistData.map(([name, role, scope]) => `
-    <div class="specialist">
-      <strong>${name}</strong>
-      <span>${role}<br>${scope}</span>
-    </div>
-  `).join("");
-}
-
-function downloadJSON(filename, value) {
-  const blob = new Blob([JSON.stringify(value, null, 2)], {type:"application/json"});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = filename;
-  a.click();
-  setTimeout(() => URL.revokeObjectURL(url), 1000);
-}
-
-function runAudit() {
-  const checks = [
-    ["Canonical public front declared", canonical.publicFront === "artist1970/NAIB.github.io"],
-    ["Private CORE declared", canonical.privateCore === "artist1970/CORE/NAIBCore"],
-    ["Runtime declared", canonical.runtime === "artist1970/noema-ai.github.io"],
-    ["Direct CORE browser fetch blocked", canonical.privateCoreBrowserFetchAllowed === false],
-    ["Permission self-elevation blocked", canonical.permissionSelfElevation === false],
-    ["Human remains final authority", canonical.humanFinalAuthority === true]
-  ];
-
-  const failed = checks.filter(([,ok]) => !ok);
-  log(`Contract audit: ${checks.length - failed.length}/${checks.length} checks passed.`);
-  alert(failed.length
-    ? `Audit found ${failed.length} failed check(s).`
-    : "Local Studio contract audit passed.");
-}
-
-loadState();
-renderSpecialists();
-renderLog();
-
-const note = document.querySelector("#studioNote");
-const status = document.querySelector("#noteStatus");
-note.value = state.note;
-if (state.note) status.textContent = "A local Studio note is currently retained in this browser.";
-
-document.querySelector("#saveNoteBtn").addEventListener("click", () => {
-  state.note = note.value.trim();
-  persist();
-  status.textContent = state.note ? "Studio note saved locally." : "No note was saved.";
-  log("Studio working note updated.");
-});
-
-document.querySelector("#clearNoteBtn").addEventListener("click", () => {
-  state.note = "";
-  note.value = "";
-  persist();
-  status.textContent = "Studio note cleared.";
-  log("Studio working note cleared.");
-});
-
-document.querySelector("#exportBtn").addEventListener("click", () => {
-  downloadJSON("naib-studio-export.json", {
-    schema: "naib-private-studio-export",
-    version: 1,
-    exportedAt: new Date().toISOString(),
-    canonical,
-    note: state.note,
-    events: state.events
-  });
-  log("Studio data exported.");
-});
-
-document.querySelector("#runAuditBtn").addEventListener("click", runAudit);
-
-document.querySelector("#clearLogBtn").addEventListener("click", () => {
-  state.events = [];
-  persist();
-  renderLog();
-});
-</script>
+      IMPORTANT:
+      - coreRef is a canonical governance reference only.
+      - This public browser does NOT fetch the private CORE repository.
+      - The working runtime remains in Noema during migration.
+      - Do not place credentials, private keys, MFA secrets, or protected CORE data here.
+    */
+    window.NAIB_PUBLIC_BRIDGE = Object.freeze({
+      version: "1.0.0",
+      identity: Object.freeze({
+        id: "naib",
+        name: "NAIB",
+        title: "Public Intelligence Director",
+        role: "front-facing intelligence"
+      }),
+      core: Object.freeze({
+        repository: "artist1970/CORE",
+        path: "NAIBCore",
+        canonicalRef: "artist1970/CORE/NAIBCore",
+        access: "private",
+        browserFetchAllowed: false
+      }),
+      governance: Object.freeze({
+        steward: "Noema",
+        humanFinalAuthority: true,
+        permissionSelfElevation: false
+      }),
+      runtime: Object.freeze({
+        repository: "artist1970/noema-ai.github.io",
+        publicUrl: "https://artist1970.github.io/noema-ai.github.io/",
+        mode: "compatibility-bridge"
+      })
+    });
+  </script>
 </body>
 </html>
