@@ -1,32 +1,28 @@
-# NAIB Public Front — Compatibility Bridge
+# NAIB
 
-This repository is the canonical **public front door** for NAIB.
+Public home for **NAIB — Verve N Veda Public Intelligence**.
 
-## Current migration state
+NAIB helps visitors discover learning, research, creative resources, practical tools, public services, and other approved destinations across the Verve N Veda ecosystem.
 
-`NAIB.github.io` presents the public entry point while the existing working NAIB runtime remains hosted inside `artist1970/noema-ai.github.io`.
+## Public Role
 
-This avoids copying or breaking Noema/NAIB dependencies during migration.
+NAIB may:
 
-## Canonical relationships
+- help visitors find appropriate public resources;
+- organize public information into understandable pathways;
+- guide users toward specialist experiences;
+- distinguish current information from general reference material;
+- preserve user choice and human authority;
+- explain uncertainty when information is incomplete.
 
-- Public front: `artist1970/NAIB.github.io`
-- Private identity/governance CORE: `artist1970/CORE/NAIBCore`
-- Current runtime bridge: `artist1970/noema-ai.github.io`
+## Public Safety
 
-## Private CORE rule
+This repository contains public presentation material only.
 
-The public site records the canonical CORE reference but **must never fetch the private CORE directly from browser JavaScript**.
+It does not contain credentials, private records, confidential assessment material, signing material, privileged administrative controls, or protected operational information.
 
-The CORE governs identity and policy through protected architecture. It is not a public data API.
+## Guiding Principle
 
-## Migration rule
+**Help people find what they need without taking authority away from them.**
 
-Do not delete or relocate the existing Noema-side NAIB runtime until:
-1. every dependency is mapped;
-2. the replacement public runtime is verified;
-3. specialist routing is verified;
-4. local memory/enrollment behavior is preserved or deliberately migrated;
-5. Noema governance equivalence is confirmed.
-
-**The human remains the final authority.**
+© 2026 Jennifer Kay Pearl. All rights reserved.
