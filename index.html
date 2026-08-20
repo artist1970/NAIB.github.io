@@ -1,115 +1,476 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#101827">
-  <meta name="description" content="NAIB — Public Intelligence Director for the Verve N Veda ecosystem.">
-  <meta name="naib-core-ref" content="artist1970/CORE/NAIBCore">
-  <meta name="naib-governance-steward" content="Noema">
-  <meta name="naib-runtime-bridge" content="artist1970/noema-ai.github.io">
-  <title>NAIB — Public Intelligence Director</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#09121d">
 
-  <style>
-    :root{
-      color-scheme:dark;
-      --bg:#07101a;
-      --panel:#0f1926;
-      --line:rgba(255,255,255,.13);
-      --ink:#eef4f8;
-      --muted:#9eabb8;
-      --gold:#d8ba78;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;width:100%;height:100%;background:var(--bg);color:var(--ink)}
-    body{font-family:Arial,Helvetica,sans-serif;overflow:hidden}
-    .bridge-shell{height:100%;display:grid;grid-template-rows:auto 1fr}
-    .bridge-bar{
-      min-height:44px;display:flex;align-items:center;justify-content:space-between;gap:16px;
-      padding:8px 14px;background:#08111b;border-bottom:1px solid var(--line)
-    }
-    .identity{display:flex;align-items:center;gap:10px;min-width:0}
-    .mark{
-      width:27px;height:27px;border:1px solid var(--gold);border-radius:50%;
-      display:grid;place-items:center;font-family:Georgia,serif;color:var(--gold)
-    }
-    .identity strong{font-family:Georgia,serif;font-weight:400;letter-spacing:.12em}
-    .identity span,.state{font-size:10px;color:var(--muted)}
-    .state{text-align:right}
-    iframe{display:block;width:100%;height:100%;border:0;background:#08111b}
-    .noscript{padding:2rem;max-width:760px;margin:auto;line-height:1.6}
-    @media(max-width:650px){
-      .bridge-bar{min-height:38px}
-      .identity span,.state{display:none}
-    }
-  </style>
+<title>NAIB · Verve N Veda Public Intelligence</title>
+<meta
+  name="description"
+  content="NAIB is the public intelligence guide for the Verve N Veda ecosystem — helping visitors discover learning, research, creative resources, practical tools, and public services."
+>
+
+<style>
+:root{
+  --bg:#08111b;
+  --bg2:#0d1926;
+  --panel:#111f2d;
+  --ink:#f4efe5;
+  --muted:#9eabb8;
+  --gold:#d8ba78;
+  --gold2:#efd99f;
+  --line:rgba(216,186,120,.27);
+  --formal:Cinzel,"Palatino Linotype",Palatino,Georgia,serif;
+  --body:"Brandon Grotesque","Avenir Next",Avenir,"Segoe UI",Arial,sans-serif;
+  --radius:7px;
+  --max:1120px;
+}
+
+*{box-sizing:border-box}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  min-width:320px;
+  min-height:100vh;
+  color:var(--ink);
+  background:
+    radial-gradient(circle at 50% 0,rgba(216,186,120,.10),transparent 34rem),
+    linear-gradient(160deg,#060c13,var(--bg) 48%,#071019);
+  font:400 16px/1.65 var(--body);
+}
+
+a{color:inherit}
+
+.wrap{
+  width:min(var(--max),calc(100% - 34px));
+  margin:auto;
+}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:20;
+  border-bottom:1px solid rgba(216,186,120,.13);
+  background:rgba(6,13,21,.91);
+  backdrop-filter:blur(14px);
+}
+
+.nav{
+  min-height:66px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:11px;
+  text-decoration:none;
+}
+
+.mark{
+  width:34px;
+  height:34px;
+  display:grid;
+  place-items:center;
+  border:1px solid var(--gold);
+  border-radius:50%;
+  color:var(--gold2);
+  font:500 15px var(--formal);
+}
+
+.brand-copy strong{
+  display:block;
+  font:500 14px var(--formal);
+  letter-spacing:.14em;
+}
+
+.brand-copy small{
+  display:block;
+  margin-top:2px;
+  color:var(--muted);
+  font-size:9px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+
+nav{
+  display:flex;
+  gap:18px;
+}
+
+nav a{
+  color:#b7c1ca;
+  text-decoration:none;
+  font-size:10px;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+}
+
+nav a:hover,
+nav a:focus{
+  color:var(--gold2);
+}
+
+.hero{
+  min-height:calc(100vh - 66px);
+  display:grid;
+  place-items:center;
+  text-align:center;
+  padding:60px 0;
+}
+
+.hero-inner{
+  max-width:900px;
+}
+
+.eyebrow{
+  margin:0;
+  color:var(--gold);
+  font:600 10px var(--formal);
+  letter-spacing:.19em;
+  text-transform:uppercase;
+}
+
+h1{
+  margin:18px 0;
+  font:500 clamp(3.5rem,10vw,7.5rem)/.9 var(--formal);
+  letter-spacing:.025em;
+}
+
+.lede{
+  max-width:750px;
+  margin:0 auto;
+  color:#b8c2ca;
+  font-size:clamp(1rem,2vw,1.22rem);
+}
+
+.actions{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:30px;
+}
+
+.button{
+  min-height:44px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px 20px;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  color:var(--ink);
+  background:#101c29;
+  text-decoration:none;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+
+.button.primary{
+  color:#211807;
+  border-color:transparent;
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+}
+
+.section{
+  padding:82px 0;
+}
+
+.section-head{
+  max-width:760px;
+  margin:0 auto 34px;
+  text-align:center;
+}
+
+.section-head h2{
+  margin:10px 0 12px;
+  font:500 clamp(2rem,5vw,3.7rem)/1 var(--formal);
+}
+
+.section-head p{
+  margin:0;
+  color:var(--muted);
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+}
+
+.card{
+  min-height:190px;
+  padding:22px;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  background:
+    linear-gradient(145deg,rgba(17,31,45,.94),rgba(10,20,31,.94));
+}
+
+.card .number{
+  color:var(--gold);
+  font:600 9px var(--formal);
+  letter-spacing:.12em;
+}
+
+.card h3{
+  margin:12px 0 8px;
+  color:var(--gold2);
+  font:500 1.15rem var(--formal);
+}
+
+.card p{
+  margin:0;
+  color:#9facb7;
+  font-size:13px;
+}
+
+.principle{
+  max-width:850px;
+  margin:auto;
+  padding:34px;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  text-align:center;
+  background:rgba(216,186,120,.045);
+}
+
+.principle blockquote{
+  margin:0;
+  color:#eedaa7;
+  font:500 clamp(1.5rem,4vw,2.5rem)/1.3 var(--formal);
+}
+
+.principle p{
+  max-width:680px;
+  margin:18px auto 0;
+  color:var(--muted);
+}
+
+footer{
+  border-top:1px solid rgba(216,186,120,.13);
+  padding:34px 0 44px;
+  color:#788795;
+  text-align:center;
+  font-size:10px;
+  letter-spacing:.08em;
+}
+
+@media(max-width:820px){
+  .grid{grid-template-columns:1fr}
+  nav{display:none}
+}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+}
+</style>
 </head>
+
 <body>
-  <div class="bridge-shell">
-    <header class="bridge-bar" aria-label="NAIB public bridge">
-      <div class="identity">
-        <span class="mark" aria-hidden="true">N</span>
-        <div>
-          <strong>NAIB</strong>
-          <span> · Public Intelligence Director</span>
-        </div>
-      </div>
-      <div class="state">CORE governed · Noema runtime bridge · human final authority</div>
-    </header>
 
-    <iframe
-      id="naibRuntime"
-      title="NAIB public intelligence workspace"
-      src="https://artist1970.github.io/noema-ai.github.io/"
-      referrerpolicy="strict-origin-when-cross-origin"
-      allow="microphone"
-    ></iframe>
+<header>
+  <div class="wrap nav">
+
+    <a class="brand" href="#top" aria-label="NAIB home">
+      <span class="mark">N</span>
+
+      <span class="brand-copy">
+        <strong>NAIB</strong>
+        <small>Verve N Veda Public Intelligence</small>
+      </span>
+    </a>
+
+    <nav aria-label="Primary navigation">
+      <a href="#purpose">Purpose</a>
+      <a href="#principles">Principles</a>
+      <a href="#explore">Explore</a>
+    </nav>
+
   </div>
+</header>
 
-  <noscript>
-    <div class="noscript">
-      NAIB requires JavaScript for the interactive workspace.
-      The canonical public runtime is currently bridged through the existing Noema implementation
-      while NAIB's public front is separated safely from its private CORE.
+<main id="top">
+
+<section class="hero">
+  <div class="wrap hero-inner">
+
+    <p class="eyebrow">
+      Verve N Veda · Public Intelligence
+    </p>
+
+    <h1>NAIB</h1>
+
+    <p class="lede">
+      A thoughtful guide through learning, research, creative work,
+      practical tools, public resources, and the wider Verve N Veda
+      ecosystem.
+    </p>
+
+    <div class="actions">
+      <a class="button primary" href="#purpose">
+        Meet NAIB
+      </a>
+
+      <a
+        class="button"
+        href="https://vervenveda.com/"
+      >
+        Explore Verve N Veda
+      </a>
     </div>
-  </noscript>
 
-  <script>
-    /*
-      NAIB PUBLIC BRIDGE CONTRACT
+  </div>
+</section>
 
-      IMPORTANT:
-      - coreRef is a canonical governance reference only.
-      - This public browser does NOT fetch the private CORE repository.
-      - The working runtime remains in Noema during migration.
-      - Do not place credentials, private keys, MFA secrets, or protected CORE data here.
-    */
-    window.NAIB_PUBLIC_BRIDGE = Object.freeze({
-      version: "1.0.0",
-      identity: Object.freeze({
-        id: "naib",
-        name: "NAIB",
-        title: "Public Intelligence Director",
-        role: "front-facing intelligence"
-      }),
-      core: Object.freeze({
-        repository: "artist1970/CORE",
-        path: "NAIBCore",
-        canonicalRef: "artist1970/CORE/NAIBCore",
-        access: "private",
-        browserFetchAllowed: false
-      }),
-      governance: Object.freeze({
-        steward: "Noema",
-        humanFinalAuthority: true,
-        permissionSelfElevation: false
-      }),
-      runtime: Object.freeze({
-        repository: "artist1970/noema-ai.github.io",
-        publicUrl: "https://artist1970.github.io/noema-ai.github.io/",
-        mode: "compatibility-bridge"
-      })
-    });
-  </script>
+
+<section class="section" id="purpose">
+
+  <div class="wrap">
+
+    <div class="section-head">
+      <p class="eyebrow">Purpose</p>
+      <h2>Intelligence that helps you navigate.</h2>
+
+      <p>
+        NAIB helps people locate useful public resources,
+        understand available pathways, and choose where they
+        would like to go next.
+      </p>
+    </div>
+
+    <div class="grid">
+
+      <article class="card">
+        <span class="number">01</span>
+        <h3>Discover</h3>
+        <p>
+          Find educational materials, research destinations,
+          creative tools, practical resources, and public services.
+        </p>
+      </article>
+
+      <article class="card">
+        <span class="number">02</span>
+        <h3>Orient</h3>
+        <p>
+          Turn a large ecosystem into understandable choices
+          without overwhelming the visitor.
+        </p>
+      </article>
+
+      <article class="card">
+        <span class="number">03</span>
+        <h3>Connect</h3>
+        <p>
+          Guide visitors toward the experience or specialist
+          resource most appropriate to what they are trying to do.
+        </p>
+      </article>
+
+      <article class="card">
+        <span class="number">04</span>
+        <h3>Clarify</h3>
+        <p>
+          Distinguish what is known, what is current, what needs
+          verification, and where uncertainty remains.
+        </p>
+      </article>
+
+      <article class="card">
+        <span class="number">05</span>
+        <h3>Respect Choice</h3>
+        <p>
+          Recommendations remain recommendations. Visitors retain
+          control over their decisions and direction.
+        </p>
+      </article>
+
+      <article class="card">
+        <span class="number">06</span>
+        <h3>Serve the Public</h3>
+        <p>
+          Keep navigation understandable, accessible, useful,
+          and centered on genuine public benefit.
+        </p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="principles">
+
+  <div class="wrap">
+
+    <div class="section-head">
+      <p class="eyebrow">Guiding Principle</p>
+      <h2>Human judgment stays in the room.</h2>
+    </div>
+
+    <div class="principle">
+
+      <blockquote>
+        “Help people find what they need without taking authority
+        away from them.”
+      </blockquote>
+
+      <p>
+        NAIB can organize, explain, suggest, and guide.
+        Final decisions remain with the person using the system.
+      </p>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="explore">
+
+  <div class="wrap">
+
+    <div class="section-head">
+      <p class="eyebrow">Explore</p>
+      <h2>A doorway, not a maze.</h2>
+
+      <p>
+        Begin at the Verve N Veda public gateway and choose the
+        educational, creative, research, professional, or public
+        resource that fits your purpose.
+      </p>
+    </div>
+
+    <div class="actions">
+      <a
+        class="button primary"
+        href="https://vervenveda.com/"
+      >
+        Enter Verve N Veda
+      </a>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    NAIB · VERVE N VEDA · © 2026 JENNIFER KAY PEARL
+  </div>
+</footer>
+
 </body>
 </html>
