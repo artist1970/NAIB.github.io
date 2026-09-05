@@ -1,0 +1,11 @@
+{
+  "name": "naib-public-front",
+  "version": "1.1.0-adit.1",
+  "private": true,
+  "type": "module",
+  "description": "Canonical public Administrator surface for NAIB",
+  "engines": {"node": ">=20"},
+  "scripts": {
+    "test": "node tests/public-contract.test.mjs"
+  }
+}

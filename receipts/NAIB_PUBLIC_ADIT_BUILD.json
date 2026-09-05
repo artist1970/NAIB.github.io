@@ -1,0 +1,41 @@
+{
+  "schema": "naib-public-build-receipt",
+  "version": 1,
+  "release": "1.1.0-adit.1",
+  "source": {
+    "archive": "NAIB.github.io-main (1).zip",
+    "files": 2,
+    "baseline": {
+      "README.md": "b88f51e62b6d14191bc79453c506707ef3d1cf6a36a28c84a05484a192cf88b9",
+      "index.html": "797c51707b94278860c293fd929aa34eaed14742ff8194e66c768cca3909c43d"
+    }
+  },
+  "changes": {
+    "added": 10,
+    "modified": 2,
+    "deleted": 0,
+    "note": "Added seven public-contract/integration files plus three certification files; modified README.md and index.html; deleted nothing."
+  },
+  "authority": {
+    "publicRole": "Administrator",
+    "publicAuthority": "guidance-and-proposal-only",
+    "protectedRuntime": "artist1970/noema-ai.github.io",
+    "privateGovernanceCore": "artist1970/CORE/NAIBCore",
+    "specialistRouter": "STOSCore",
+    "proposalMediation": "ADIT-STOS",
+    "finalAuthority": "STOS trust spine",
+    "humanFinalAuthority": true,
+    "execution": false,
+    "mutation": false,
+    "admin": false,
+    "secretAccess": false,
+    "direct9844Proxy": false
+  },
+  "validation": {
+    "publicContractTests": "PASS",
+    "jsonValidation": "PASS",
+    "secretValueScan": "PASS",
+    "noDeletions": "PASS"
+  },
+  "status": "CANDIDATE_PASS_NOT_LIVE_VERIFIED"
+}

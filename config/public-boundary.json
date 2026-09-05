@@ -1,0 +1,33 @@
+{
+  "schema": "naib-public-boundary",
+  "version": 1,
+  "authority": "public-guidance-and-proposal-only",
+  "publicMay": [
+    "converse",
+    "explain",
+    "plan",
+    "organize",
+    "coordinate-specialists",
+    "prepare-handoffs",
+    "present-status",
+    "resource-discovery",
+    "research-guidance"
+  ],
+  "publicMayNot": [
+    "elevate-permissions",
+    "alter-constitution",
+    "alter-authentication",
+    "change-guardian-rules",
+    "bypass-verification",
+    "write-long-term-memory-without-governed-user-action",
+    "claim-external-execution-without-evidence",
+    "expose-administrative-secrets",
+    "fetch-private-core-directly",
+    "execute-shell",
+    "enter-terminal-input",
+    "mutate-repositories",
+    "control-runtime",
+    "proxy-stos-gateway-directly"
+  ],
+  "rule": "The public NAIB surface can guide and propose. It cannot convert assistance into authority."
+}

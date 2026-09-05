@@ -1,0 +1,32 @@
+{
+  "schema": "naib-public-front-contract",
+  "version": 1,
+  "release": "1.1.0-adit.1",
+  "identity": {
+    "id": "naib",
+    "name": "NAIB",
+    "title": "Administrator",
+    "role": "public-administrator"
+  },
+  "publicFront": {
+    "canonical": true,
+    "repository": "artist1970/NAIB.github.io",
+    "url": "https://artist1970.github.io/NAIB.github.io/"
+  },
+  "protectedRuntime": {
+    "repository": "artist1970/noema-ai.github.io",
+    "role": "protected-administrative-intelligence-runtime",
+    "publicDestination": false
+  },
+  "privateGovernanceCore": {
+    "ref": "artist1970/CORE/NAIBCore",
+    "browserFetchAllowed": false
+  },
+  "routing": {
+    "specialistRouter": "STOSCore",
+    "proposalMediation": "ADIT-STOS",
+    "finalAuthority": "STOS trust spine"
+  },
+  "humanFinalAuthority": true,
+  "permissionSelfElevation": false
+}
