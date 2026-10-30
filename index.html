@@ -530,6 +530,15 @@ footer{
   </div>
 </section>
 
+<section class="section" id="naib-chat"><div class="wrap" style="max-width:860px">
+<div class="section-head"><p class="eyebrow">Public guidance</p><h2>Ask NAIB</h2><p>Navigate the ecosystem, plan a next step, or identify the right specialist. This public conversation cannot execute or authorize actions.</p></div>
+<div style="padding:22px;border:1px solid var(--line);border-radius:7px;background:var(--panel)">
+<label for="naib-message" style="display:block;margin-bottom:8px">What would you like to accomplish?</label>
+<textarea id="naib-message" rows="3" maxlength="1200" style="width:100%;padding:12px;background:var(--bg);border:1px solid var(--line);border-radius:7px;color:var(--ink);font:inherit" placeholder="Help me find the right Academy or creative resource…"></textarea>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px"><button type="button" id="naib-ask" style="padding:11px 18px;background:var(--gold);color:#08111b;border:0;border-radius:7px;cursor:pointer">Ask NAIB</button><button type="button" id="naib-clear" style="padding:11px 18px;background:transparent;color:var(--ink);border:1px solid var(--line);border-radius:7px;cursor:pointer">Clear</button></div>
+<div id="naib-answer" role="status" aria-live="polite" style="margin-top:17px;padding:14px;border:1px solid var(--line);border-radius:7px">Welcome. I can help you navigate, plan, and prepare a specialist handoff.</div>
+<p style="font-size:12px;color:var(--muted)">Local public guidance only. No message history stored; no protected administrative connection.</p>
+</div></div></section>
 </main>
 
 <footer>
@@ -538,5 +547,5 @@ footer{
   </div>
 </footer>
 
-</body>
+<script src="naib-public-conversation-v1.js"></script><script>(function(){const input=document.getElementById("naib-message"),output=document.getElementById("naib-answer");document.getElementById("naib-ask").addEventListener("click",()=>{output.textContent=window.NAIBPublicConversation?.respond(input.value)||"Guidance is temporarily unavailable.";});document.getElementById("naib-clear").addEventListener("click",()=>{input.value="";output.textContent="What would you like to explore?";input.focus();});})();</script></body>
 </html>
