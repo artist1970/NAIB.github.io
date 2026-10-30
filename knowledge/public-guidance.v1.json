@@ -1,0 +1,150 @@
+{
+  "schema": "naib-public-guidance-v1",
+  "version": 1,
+  "records": [
+    {
+      "id": "naib-001",
+      "topic": "navigation",
+      "question": "Where do I begin?",
+      "response": "Verve N Veda is the public gateway. Tell me whether your goal is learning, creativity, research, or practical support, and I can suggest a doorway.",
+      "status": "approved-public",
+      "version": 1
+    },
+    {
+      "id": "naib-002",
+      "topic": "academy",
+      "question": "Where can I find courses?",
+      "response": "Khaemenes Academy is the educational campus. Archaemenes supports academic guidance.",
+      "status": "approved-public",
+      "version": 1
+    },
+    {
+      "id": "naib-003",
+      "topic": "linguistics",
+      "question": "Where are language courses?",
+      "response": "The Khaemenes Linguistics Hall is the language-learning campus, including French and other language programs.",
+      "status": "approved-public",
+      "version": 1
+    },
+    {
+      "id": "naib-004",
+      "topic": "art",
+      "question": "Who helps with art?",
+      "response": "Zelle is the visual arts mentor for Bazaar Art.",
+      "status": "approved-public",
+      "version": 1
+    },
+    {
+      "id": "naib-005",
+      "topic": "music",
+      "question": "Who helps with music?",
+      "response": "Moirai supports music, composition, practice, and The Refrain.",
+      "status": "approved-public",
+      "version": 1
+    },
+    {
+      "id": "naib-006",
+      "topic": "writing",
+      "question": "Who helps with poetry and writing?",
+      "response": "Eiren is the literary and language-arts mentor.",
+      "status": "approved-public",
+      "version": 1
+    },
+    {
+      "id": "naib-007",
+      "topic": "wellness",
+      "question": "Who supports grounding and reflection?",
+      "response": "Aurora offers gentle non-diagnostic wellness reflection.",
+      "status": "approved-public",
+      "version": 1
+    },
+    {
+      "id": "naib-008",
+      "topic": "support",
+      "question": "Who helps with community resources?",
+      "response": "Hope provides compassionate practical support and community-resource navigation.",
+      "status": "approved-public",
+      "version": 1
+    },
+    {
+      "id": "naib-009",
+      "topic": "archives",
+      "question": "Where are the archives?",
+      "response": "ARSHIF is the archival and research resource for preserved knowledge and provenance.",
+      "status": "approved-public",
+      "version": 1
+    },
+    {
+      "id": "naib-010",
+      "topic": "planning",
+      "question": "Can you help me make a plan?",
+      "response": "Yes. We can define your goal, list the next steps, identify responsible people, and mark what still requires verification.",
+      "status": "approved-public",
+      "version": 1
+    },
+    {
+      "id": "naib-011",
+      "topic": "delegation",
+      "question": "Can you delegate to a specialist?",
+      "response": "I can recommend an appropriate specialist handoff. A real delegated action requires authorized systems and confirmation; this public chat does not perform it.",
+      "status": "approved-public",
+      "version": 1
+    },
+    {
+      "id": "naib-012",
+      "topic": "status",
+      "question": "Can you confirm that a task was completed?",
+      "response": "I can distinguish a proposal from a completed action, but cannot claim execution without a verifiable receipt.",
+      "status": "approved-public",
+      "version": 1
+    },
+    {
+      "id": "naib-013",
+      "topic": "privacy",
+      "question": "What information should I share?",
+      "response": "Share only what is needed for public guidance. Do not enter credentials, private student records, financial details, or administrative secrets.",
+      "status": "approved-public",
+      "version": 1
+    },
+    {
+      "id": "naib-014",
+      "topic": "authority",
+      "question": "Can you change permissions?",
+      "response": "No. This public chat cannot elevate permissions, change governance, or execute protected operations.",
+      "status": "approved-public",
+      "version": 1
+    },
+    {
+      "id": "naib-015",
+      "topic": "research",
+      "question": "Can you help me research?",
+      "response": "I can help frame a research question and identify source categories. Current findings need independent verification.",
+      "status": "approved-public",
+      "version": 1
+    },
+    {
+      "id": "naib-016",
+      "topic": "family",
+      "question": "Where do families begin?",
+      "response": "The Khaemenes Academy family portal supports family learning pathways and learner navigation.",
+      "status": "approved-public",
+      "version": 1
+    },
+    {
+      "id": "naib-017",
+      "topic": "identity",
+      "question": "Who is NAIB?",
+      "response": "I am NAIB's public guidance interface for ecosystem navigation, coordination proposals, and specialist routing. Human authority remains final.",
+      "status": "approved-public",
+      "version": 1
+    },
+    {
+      "id": "naib-018",
+      "topic": "uncertainty",
+      "question": "What if you are unsure?",
+      "response": "I will say what is uncertain, suggest a way to verify it, and avoid presenting a proposal as a completed action.",
+      "status": "approved-public",
+      "version": 1
+    }
+  ]
+}
