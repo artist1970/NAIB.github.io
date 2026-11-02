@@ -275,32 +275,19 @@ footer{
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
 }
+
+/* Page-owned content only; official ecosystem components retain their own typography. */
+main{font-size:16px;line-height:1.65}
+main :is(p,li,label,input,textarea,select,button,a,small,.eyebrow,.kicker){font-size:16px}
+main h1{font-size:clamp(44px,7vw,88px)}
+main :is(.eyebrow,.kicker){letter-spacing:.12em}
+footer{background:#142432;color:#f6f0e6;font-size:16px}
 </style>
 </head>
 
 <body>
 
-<header>
-  <div class="wrap nav">
 
-    <a class="brand" href="#top" aria-label="NAIB home">
-      <span class="mark">N</span>
-
-      <span class="brand-copy">
-        <strong>NAIB</strong>
-        <small>Verve N Veda Public Administrator</small>
-      </span>
-    </a>
-
-    <nav aria-label="Primary navigation">
-      <a href="#purpose">Purpose</a>
-      <a href="#principles">Principles</a>
-      <a href="#boundary">Boundary</a>
-      <a href="#explore">Explore</a>
-    </nav>
-
-  </div>
-</header>
 
 <main id="top">
 
@@ -548,5 +535,11 @@ footer{
 </footer>
 
 <script src="naib-public-conversation-v1.js"></script><script>(function(){const input=document.getElementById("naib-message"),output=document.getElementById("naib-answer");document.getElementById("naib-ask").addEventListener("click",()=>{output.textContent=window.NAIBPublicConversation?.respond(input.value)||"Guidance is temporarily unavailable.";});document.getElementById("naib-clear").addEventListener("click",()=>{input.value="";output.textContent="What would you like to explore?";input.focus();});})();</script><script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"></script>
+
+<script src="https://vervenveda.com/assets/vnv-header-autopopulate.js"></script>
+<script>VNV_HEADER.mount({title:"NAIB",subtitle:"Khaemenes Academy · AI Mentor",home:"https://vervenveda.com/"});</script>
+<script src="https://vervenveda.com/assets/vnv-ticker-autopopulate.js"></script>
+<script>VNV_TICKER.autoPopulate({label:"NAIB · Quick Links",max:14});</script>
+<script src="https://vervenveda.com/assets/vnv-333-ticker.js"></script>
 </body>
 </html>
