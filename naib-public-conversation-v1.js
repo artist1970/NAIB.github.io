@@ -6,7 +6,8 @@ const topics=[["academy",["school","academy","class","course","learn"]],["lingui
 function respond(input){const q=String(input||"").trim().toLowerCase().slice(0,1200);if(!q)return "Tell me what you want to find, plan, or understand.";
 if(/(password|token|secret|credential|private key|shell|terminal|sudo|permission|override|bypass|noema|chancellor)/.test(q))return "This public interface cannot disclose protected governance details, credentials, internal operations, or execute administrative changes. I can help describe a public-safe request and the authorization it would require.";
 if(/^(hi|hello|hey|good morning)[!. ]*$/.test(q))return "Welcome. I am NAIB's public navigation assistant. Are you exploring education, art, music, archives, or practical resources?";
-const matches=topics.map(([topic,terms])=>({topic,score:terms.reduce((score,term)=>score+(new RegExp("(^|[^a-z])"+term.replace(/[.*+?^{}()|[\\]\\]/g,"\\const topic=topics.find(([_,words])=>words.some(w=>q.includes(w)))?.[0];const r=records.find(x=>x.topic===topic);if(r)return r.response;")+"([^a-z]|$)","i").test(q)?Math.max(1,term.split(" ").length):0),0)}))
+const normalized=" "+q.replace(/[^a-z0-9]+/g," ").trim()+" ";
+const matches=topics.map(([topic,terms])=>({topic,score:terms.reduce((score,term)=>score+(normalized.includes(" "+term+" ")?Math.max(1,term.split(" ").length):0),0)}))
   .filter(x=>x.score>0).sort((a,b)=>b.score-a.score||a.topic.localeCompare(b.topic));
 const unique=[...new Set(matches.map(x=>x.topic))];
 if(unique.length>1){
