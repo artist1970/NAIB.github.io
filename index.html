@@ -276,6 +276,11 @@ footer{
   html{scroll-behavior:auto}
 }
 
+/* Keep the complete conversation heading visible below the shared fixed tickers/header. */
+#naib-chat{scroll-margin-top:150px;min-height:calc(100vh - 150px)}
+#naib-chat .section-head{margin-bottom:20px}
+#naib-message:focus-visible{outline:2px solid var(--gold2);outline-offset:3px}
+#naib-ask:disabled{cursor:not-allowed;opacity:.55}
 /* Page-owned content only; official ecosystem components retain their own typography. */
 main{font-size:16px;line-height:1.65}
 main :is(p,li,label,input,textarea,select,button,a,small,.eyebrow,.kicker){font-size:16px}
@@ -307,7 +312,7 @@ footer{background:#142432;color:#f6f0e6;font-size:16px}
     </p>
 
     <div class="actions">
-      <a class="button primary" href="#purpose">
+      <a class="button primary" href="#naib-chat">
         Meet NAIB
       </a>
 
@@ -519,13 +524,13 @@ footer{background:#142432;color:#f6f0e6;font-size:16px}
 
 <section class="section" id="naib-chat"><div class="wrap" style="max-width:860px">
 <div class="section-head"><p class="eyebrow">Public guidance</p><h2>Ask NAIB</h2><p>Navigate the ecosystem, plan a next step, or identify the right specialist. This public conversation cannot execute or authorize actions.</p></div>
-<div style="padding:22px;border:1px solid var(--line);border-radius:7px;background:var(--panel)">
+<form id="naib-chat-form" style="padding:22px;border:1px solid var(--line);border-radius:7px;background:var(--panel)">
 <label for="naib-message" style="display:block;margin-bottom:8px">What would you like to accomplish?</label>
 <textarea id="naib-message" rows="3" maxlength="1200" style="width:100%;padding:12px;background:var(--bg);border:1px solid var(--line);border-radius:7px;color:var(--ink);font:inherit" placeholder="Help me find the right Academy or creative resource…"></textarea>
-<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px"><button type="button" id="naib-ask" style="padding:11px 18px;background:var(--gold);color:#08111b;border:0;border-radius:7px;cursor:pointer">Ask NAIB</button><button type="button" id="naib-clear" style="padding:11px 18px;background:transparent;color:var(--ink);border:1px solid var(--line);border-radius:7px;cursor:pointer">Clear</button></div>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px"><button type="submit" id="naib-ask" disabled style="padding:11px 18px;background:var(--gold);color:#08111b;border:0;border-radius:7px;cursor:pointer">Ask NAIB</button><button type="button" id="naib-clear" style="padding:11px 18px;background:transparent;color:var(--ink);border:1px solid var(--line);border-radius:7px;cursor:pointer">Clear</button></div>
 <div id="naib-answer" role="status" aria-live="polite" style="margin-top:17px;padding:14px;border:1px solid var(--line);border-radius:7px">Welcome. I can help you navigate, plan, and prepare a specialist handoff.</div>
-<p style="font-size:12px;color:var(--muted)">Local public guidance only. No message history stored; no protected administrative connection.</p>
-</div></div></section>
+<p style="font-size:16px;color:var(--muted)">Press Enter to send; Shift+Enter adds a new line. Local public guidance only. No message history stored; no protected administrative connection.</p>
+</form></div></section>
 
 <section id="mentor-language-laboratory" aria-label="Shared AI mentor public knowledge directory" style="margin:24px auto;max-width:1040px;padding:20px;border:2px solid #28332f;border-radius:7px;background:#f4f0e7;color:#28332f;font:400 16px/1.6 Nunito,Arial,sans-serif;text-align:center"><p style="margin:0;font:400 22px/1.3 Cinzel,Georgia,serif">Creative Spark Language Laboratory</p><p style="margin:9px auto 0;max-width:720px">Explore public learning, languages, translation, Aurora and ARSHIF resources. Private mentor CORE and learner records remain protected.</p><a href="https://artist1970.github.io/creative-spark.github.io/language-laboratory/?mentor=naib" style="display:inline-block;margin-top:10px;padding:10px 16px;border-radius:7px;background:#28332f;color:#f4f0e7;font:400 16px Nunito,Arial,sans-serif;text-decoration:none">Explore Public Knowledge Directory</a><p style="margin:12px auto 0"><a id="arshif-public-referral" href="https://vervenveda.com/Arshif.github.io/" style="display:inline-block;padding:10px 16px;border-radius:7px;background:#28332f;color:#f4f0e7;font:400 16px/1.5 Nunito,Arial,sans-serif;text-decoration:none">Visit ARSHIF Archives</a></p></section>
 </main>
@@ -536,7 +541,7 @@ footer{background:#142432;color:#f6f0e6;font-size:16px}
   </div>
 </footer>
 
-<script src="naib-public-conversation-v1.js"></script><script>(function(){const input=document.getElementById("naib-message"),output=document.getElementById("naib-answer");document.getElementById("naib-ask").addEventListener("click",()=>{output.textContent=window.NAIBPublicConversation?.respond(input.value)||"Guidance is temporarily unavailable.";});document.getElementById("naib-clear").addEventListener("click",()=>{input.value="";output.textContent="What would you like to explore?";input.focus();});})();</script><script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"></script>
+<script src="naib-public-conversation-v1.js"></script><script src="naib-chat-form-v1.js"></script><script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"></script>
 
 <script src="https://vervenveda.com/assets/vnv-header-autopopulate.js"></script>
 <script>VNV_HEADER.mount({title:"NAIB",subtitle:"Khaemenes Academy · AI Mentor",home:"https://vervenveda.com/"});</script>

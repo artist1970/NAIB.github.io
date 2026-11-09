@@ -1,0 +1,25 @@
+name: NAIB chat entry regression
+on:
+  pull_request:
+    paths:
+      - 'index.html'
+      - 'naib-chat-form-v1.js'
+      - 'tests/naib-chat-form.test.mjs'
+      - '.github/workflows/naib-chat-entry.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'naib-chat-form-v1.js'
+      - 'tests/naib-chat-form.test.mjs'
+permissions:
+  contents: read
+jobs:
+  public-chat:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --test tests/naib-chat-form.test.mjs
