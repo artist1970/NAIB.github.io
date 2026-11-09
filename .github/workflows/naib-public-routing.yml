@@ -1,0 +1,25 @@
+name: NAIB public routing regression
+on:
+  pull_request:
+    paths:
+      - 'naib-public-conversation-v1.js'
+      - 'knowledge/public-guidance.v1.json'
+      - 'tests/naib-public-routing.test.mjs'
+      - '.github/workflows/naib-public-routing.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'naib-public-conversation-v1.js'
+      - 'knowledge/public-guidance.v1.json'
+      - 'tests/naib-public-routing.test.mjs'
+permissions:
+  contents: read
+jobs:
+  public-routing:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --test tests/naib-public-routing.test.mjs
