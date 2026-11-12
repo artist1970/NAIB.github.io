@@ -76,7 +76,7 @@ function replay(buttonParent,text){
 }
 if(cfg.existing){
  function decorate(readNew=false){
-  for(const turn of log.querySelectorAll('.naib-turn[data-speaker="naib"]')){const p=turn.querySelector("p");if(p){replay(turn,p.textContent);if(readNew&&autoRead) speak(p.textContent);}}
+  for(const turn of log.querySelectorAll('.naib-turn[data-speaker="naib"]')){const p=turn.querySelector("p");if(p&&!turn.querySelector(".mentor-replay")){replay(turn,p.textContent);if(readNew&&autoRead)speak(p.textContent);}}
  }
  decorate();
  if("MutationObserver" in window){const observer=new MutationObserver(changes=>{
