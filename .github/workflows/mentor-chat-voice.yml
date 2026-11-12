@@ -5,6 +5,14 @@ on:
       - 'index.html'
       - 'mentor-chat-voice-v1.js'
       - 'tests/mentor-chat-voice.test.mjs'
+      - 'naib-public-conversation-v1.js'
+      - 'naib-chat-form-v1.js'
+      - 'creative-spark-mentor-qa-v1.js'
+      - 'knowledge/public-guidance.v1.json'
+      - 'knowledge/drafts/**'
+      - 'styles/naib-landing-refinement-v1.css'
+      - 'tests/naib-five-bubble.test.mjs'
+      - 'tests/naib-chat-form.test.mjs'
       - '.github/workflows/mentor-chat-voice.yml'
   push:
     branches: [main]
@@ -12,6 +20,15 @@ on:
       - 'index.html'
       - 'mentor-chat-voice-v1.js'
       - 'tests/mentor-chat-voice.test.mjs'
+      - 'naib-public-conversation-v1.js'
+      - 'naib-chat-form-v1.js'
+      - 'creative-spark-mentor-qa-v1.js'
+      - 'knowledge/public-guidance.v1.json'
+      - 'knowledge/drafts/**'
+      - 'styles/naib-landing-refinement-v1.css'
+      - 'tests/naib-five-bubble.test.mjs'
+      - 'tests/naib-chat-form.test.mjs'
+      - '.github/workflows/mentor-chat-voice.yml'
 permissions:
   contents: read
 jobs:
@@ -22,4 +39,4 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: node --test tests/mentor-chat-voice.test.mjs
+      - run: node --test tests/mentor-chat-voice.test.mjs tests/naib-chat-form.test.mjs tests/naib-five-bubble.test.mjs
