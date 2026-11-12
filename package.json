@@ -4,8 +4,10 @@
   "private": true,
   "type": "module",
   "description": "Canonical public Administrator surface for NAIB",
-  "engines": {"node": ">=20"},
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
-    "test": "node tests/public-contract.test.mjs"
+    "test": "node tests/public-contract.test.mjs && node tests/dialogue-continuity.test.mjs"
   }
 }
