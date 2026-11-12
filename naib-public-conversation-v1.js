@@ -17,7 +17,30 @@ const ready=fetch("./knowledge/public-guidance.v1.json",{cache:"no-store",creden
  }
  records=d.records;state="ready";return records.length;
 }).catch(()=>{records=[];state="unavailable";return 0});
+/* Session-only dialogue state: no account identity, transcript or persistent storage. */
+const followups=Object.freeze({
+ academy:{detail:"Khaemenes Academy offers learning pathways. Archaemenes is the academic guide.",step:"Start at the Verve N Veda public gateway, choose Khaemenes Academy, and select the learning level you need.",example:"For example, you can ask Archaemenes which mathematics pathway suits a learner's current readiness.",specialist:"Archaemenes"},
+ linguistics:{detail:"The Linguistics Hall supports language study, including French.",step:"Open the Academy's Linguistics Hall and choose a language course.",example:"For example, Pierre can help you practice a short French introduction.",specialist:"Pierre"},
+ art:{detail:"Zelle guides drawing, painting and creative exploration.",step:"Visit the Bazaar Art learning resources or ask Zelle about a medium.",example:"For example, ask Zelle to guide a beginner through shading a simple sphere.",specialist:"Zelle"},
+ music:{detail:"Moirai guides composition, music practice and The Refrain.",step:"Choose a music topic or visit The Refrain's public doorway.",example:"For example, ask Moirai to explain rhythm through a simple clapping exercise.",specialist:"Moirai"},
+ writing:{detail:"Eiren guides literature, writing and poetry.",step:"Choose a writing goal such as vocabulary, poetry or revision.",example:"For example, ask Eiren to help improve the imagery in a short original poem.",specialist:"Eiren"},
+ wellness:{detail:"Aurora offers general mindfulness, movement and grounding guidance, not diagnosis.",step:"Ask Aurora for a gentle, age-appropriate grounding or movement exercise.",example:"For example, request a short breathing and stretching routine.",specialist:"Aurora"},
+ support:{detail:"Hope helps locate public community-support resources without verifying personal eligibility.",step:"Describe the general kind of community resource you need without sharing private details.",example:"For example, ask Hope how to look for publicly listed food assistance resources.",specialist:"Hope"},
+ archives:{detail:"ARSHIF supports public archival discovery and source provenance.",step:"Visit https://vervenveda.com/Arshif.github.io/ and search its public collections.",example:"For example, ask ARSHIF how to check whether an historical source is primary or secondary.",specialist:"ARSHIF"},
+ research:{detail:"A useful research plan distinguishes a question, evidence and verification.",step:"Start by writing one clear research question and listing credible source categories.",example:"For example, compare an original document with a scholarly secondary source.",specialist:"ARSHIF"},
+ planning:{detail:"A useful plan defines a goal, a few practical steps and what needs verification.",step:"Describe one non-sensitive goal, and we can organize its next steps without executing them.",example:"For example, break a creative project into research, draft and review stages.",specialist:"NAIB"},
+ navigation:{detail:"The Verve N Veda gateway connects public learning and creative resources.",step:"Visit https://vervenveda.com/ and choose the area that matches your goal.",example:"For example, choose Academy for courses or Bazaar Art for visual arts.",specialist:"NAIB"}
+});
 function reset(){lastTopic="";root.CreativeSparkMentorQA?.reset?.({mentorId:"naib",scope:"public-routing"});}
+function followup(q){
+ const topic=followups[lastTopic];if(!topic)return null;
+ if(/^(?:tell me more|more details|explain further|can you explain|what is that|what do you mean|continue|go on)$/.test(q))return topic.detail+" "+topic.step;
+ if(/^(?:what next|what should i do next|how do i start|where do i start|where do i go|first step|how can i begin)$/.test(q))return topic.step+" This is guidance, not an action taken.";
+ if(/^(?:give me an example|show me an example|for example|example please|can you give an example)$/.test(q))return topic.example;
+ if(/^(?:who can help|which mentor|who should i ask|can you refer me|which specialist)$/.test(q))return topic.specialist+" is the appropriate public specialist for "+lastTopic+". I can suggest that handoff but cannot transfer a private conversation or initiate an authorized action.";
+ if(/^(?:another option|what else)$/.test(q))return "For "+lastTopic+", we can explore a different introductory activity or identify the specialist "+topic.specialist+". Which would you prefer?";
+ return null;
+}
 function ranked(raw){
  const q=norm(raw),t=tokens(q);
  const scored=records.map(x=>{
@@ -36,14 +59,13 @@ function respond(input){
  const language=root.CreativeSparkLanguageRequest?.answer(raw,{mentorId:"naib"});
  if(language)return language;
  if(["hi","hello","hey","good morning","good evening"].includes(q))return "Welcome. Would you like to explore education, art, music, archives or practical support?";
- if(/^(tell me more|what next|continue|another option|go on)$/.test(q)&&lastTopic)
-  return "We were exploring "+lastTopic+". Would you like the public doorway, a simple next-step plan, or a specialist introduction? No action has been executed.";
+ const continued=followup(q);if(continued)return continued;
  const direct=ranked(raw);if(direct){lastTopic=direct.topic;return direct.response;}
  const safeAcademic=/\b(?:poetry|literature|grammar|language learning|music theory|painting|drawing|art technique|study strategy)\b/i.test(raw);
  const consequential=/\b(?:housing|benefits|medical|health|crisis|emergency|financial|legal|account|personal data|student|grades|permission)\b/i.test(raw);
  if(safeAcademic&&!consequential){
   const ref=root.CreativeSparkMentorQA?.answer(raw,{mentorId:"naib",scope:"public-routing"});
-  if(ref)return "Public specialist reference from "+ref.sourceName+": "+ref.answer+" (Source: "+ref.sourceName+" · "+ref.topic+".) This is guidance, not an administrative action.";
+  if(ref){lastTopic=domains.find(([_,phrases])=>phrases.some(p=>q.includes(p)))?.[0]||lastTopic;return "Public specialist reference from "+ref.sourceName+": "+ref.answer+" (Source: "+ref.sourceName+" · "+ref.topic+".) This is guidance, not an administrative action.";}
  }
  const domain=domains.find(([_,phrases])=>phrases.some(p=>q.includes(p)))?.[0];
  if(domain){
