@@ -1,0 +1,38 @@
+/* NAIB · VNV/KA public mentor design polish. No admin or backend changes. */
+:root{--radius:7px;--formal:"Cinzel",Georgia,serif;--body:"Nunito","Brandon Grotesque","Avenir Next",Arial,sans-serif}
+body{font:400 18px/1.7 var(--body);color:#f4efe5}
+html{scroll-padding-top:95px}
+.hero{min-height:max(630px,calc(100svh - 100px));padding:75px 0}
+.hero-inner{max-width:810px}
+.hero h1{font:400 clamp(54px,8vw,66px)/1.18 var(--formal);letter-spacing:.025em}
+.eyebrow{font:400 18px/1.5 var(--formal);letter-spacing:.055em;text-transform:none;color:#e4c786}
+.lede{font:400 18px/1.75 var(--body);color:#d7dfe1}
+.button,.actions a{min-height:44px;padding:10px 18px;font:400 16px/1.5 var(--body);letter-spacing:0;text-transform:none}
+.section{padding:clamp(50px,6vw,80px) 0}
+.section-head h2{font:400 clamp(30px,4vw,44px)/1.3 var(--formal)}
+.section-head p,.card p,.principle p{font:400 18px/1.7 var(--body);color:#d0d9df}
+.card{min-width:0;min-height:0;border-radius:7px}
+.card .number{font:400 16px/1.4 var(--formal);letter-spacing:.025em}
+.card h3{font:400 24px/1.35 var(--formal);color:#f0d99e}
+.card p{font-size:18px}
+.grid{gap:18px}
+.principle{border-radius:7px}
+.principle blockquote{font:400 clamp(23px,3vw,33px)/1.45 var(--formal)}
+#naib-chat{padding-top:0;scroll-margin-top:95px}
+.naib-chat-anchor{position:relative;top:auto;z-index:1;min-height:70px;padding:12px max(18px,calc((100vw - 1120px)/2));background:#202724;color:#fff8e9;border-block:2px solid #d8ba78;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.naib-chat-anchor span{font:400 18px/1.5 var(--formal)}
+.naib-chat-anchor a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 14px;border:1px solid #d8ba78;border-radius:7px;background:#33423d;color:#fff8e9;text-decoration:none;font-size:16px}
+.naib-chat-content{padding-top:43px;padding-bottom:65px}
+#naib-chat-form{max-width:860px;margin:auto}
+#naib-chat label,#naib-chat textarea,#naib-chat button{font-size:18px;line-height:1.5}
+#naib-chat button{min-height:44px}
+#naib-conversation .naib-turn p{font-size:18px;line-height:1.65}
+.mentor-voice-panel{border-color:#ad986a!important;background:#192b2f;border-radius:7px}
+.mentor-voice-panel button{background:#28332f;color:#fff8e9}
+.mentor-voice-panel button:disabled{opacity:.65;cursor:not-allowed}
+.naib-footer-nav{display:flex;flex-wrap:wrap;gap:10px 17px;justify-content:center;margin-top:12px}
+.naib-footer-nav a{display:inline-flex;min-height:44px;align-items:center;padding:10px 14px;border-radius:7px;border:1px solid #ad986a;background:#202724;color:#fff8e9;text-decoration:none;font-size:16px}
+footer{text-align:center;font-size:16px;color:#fff8e9}
+@media(max-width:920px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{min-height:auto}}
+@media(max-width:650px){.grid{grid-template-columns:1fr}.hero{padding:64px 0}.hero .actions{flex-direction:column}.hero .actions a{width:100%}.naib-chat-anchor{justify-content:center}.naib-chat-anchor a{width:100%}.section{padding-block:48px}.card{padding:21px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
