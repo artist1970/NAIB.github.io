@@ -33,6 +33,8 @@ function respond(input){
  if(!q)return "Tell me what you would like to find, plan or understand.";
  if(dangerous.test(raw))return "If someone is in immediate danger, contact local emergency services or a trusted person nearby. In the United States, call or text 988 for crisis support. This public page cannot provide emergency care.";
  if(protectedRequest.test(raw))return "This public interface cannot access private student or family records, credentials, administrative controls, terminals or protected systems. I can help describe a public-safe request and the authorization it would require, but I have not taken action.";
+ const language=root.CreativeSparkLanguageRequest?.answer(raw,{mentorId:"naib"});
+ if(language)return language;
  if(["hi","hello","hey","good morning","good evening"].includes(q))return "Welcome. Would you like to explore education, art, music, archives or practical support?";
  if(/^(tell me more|what next|continue|another option|go on)$/.test(q)&&lastTopic)
   return "We were exploring "+lastTopic+". Would you like the public doorway, a simple next-step plan, or a specialist introduction? No action has been executed.";
