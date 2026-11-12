@@ -296,6 +296,7 @@ main h1{font-size:clamp(44px,7vw,88px)}
 main :is(.eyebrow,.kicker){letter-spacing:.12em}
 footer{background:#142432;color:#f6f0e6;font-size:16px}
 </style>
+<link rel="stylesheet" href="styles/naib-landing-refinement-v1.css">
 </head>
 
 <body>
@@ -304,7 +305,7 @@ footer{background:#142432;color:#f6f0e6;font-size:16px}
 
 <main id="top">
 
-<section class="hero">
+<section class="hero" id="naib-introduction">
   <div class="wrap hero-inner">
 
     <p class="eyebrow">
@@ -530,7 +531,9 @@ footer{background:#142432;color:#f6f0e6;font-size:16px}
   </div>
 </section>
 
-<section class="section" id="naib-chat"><div class="wrap" style="max-width:860px">
+<section class="section" id="naib-chat">
+<nav class="naib-chat-anchor" aria-label="NAIB public conversation section"><span>NAIB · Public Conversation</span><a href="#naib-introduction">Back to introduction ↑</a></nav>
+<div class="wrap naib-chat-content" style="max-width:860px">
 <div class="section-head"><p class="eyebrow">Public guidance</p><h2>Ask NAIB</h2><p>Navigate the ecosystem, plan a next step, or identify the right specialist. This public conversation cannot execute or authorize actions.</p></div>
 <form id="naib-chat-form" style="padding:22px;border:1px solid var(--line);border-radius:7px;background:var(--panel)">
 <div id="naib-conversation" role="log" aria-label="Conversation with NAIB" aria-live="polite" aria-relevant="additions" aria-atomic="false">
@@ -548,11 +551,16 @@ footer{background:#142432;color:#f6f0e6;font-size:16px}
 
 <footer>
   <div class="wrap">
-    NAIB · PUBLIC ADMINISTRATOR · VERVE N VEDA · 1.1.0-adit.1 · © 2026 JENNIFER KAY PEARL
+    NAIB · Public Administrator · Verve N Veda · © 2026 Jennifer Kay Pearl
+    <nav class="naib-footer-nav" aria-label="Footer navigation">
+      <a href="#naib-introduction">Introduction</a>
+      <a href="#naib-chat">Talk with NAIB</a>
+      <a href="https://vervenveda.com/">Verve N Veda</a>
+    </nav>
   </div>
 </footer>
 
-<script src="naib-public-conversation-v1.js"></script><script src="naib-chat-form-v1.js"></script><script src="mentor-chat-voice-v1.js"></script><script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"></script>
+<script src="creative-spark-mentor-qa-v1.js"></script><script src="naib-public-conversation-v1.js"></script><script src="naib-chat-form-v1.js"></script><script src="mentor-chat-voice-v1.js"></script><script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"></script>
 
 <script src="https://vervenveda.com/assets/vnv-header-autopopulate.js"></script>
 <script>VNV_HEADER.mount({title:"NAIB",subtitle:"Khaemenes Academy · AI Mentor",home:"https://vervenveda.com/"});</script>
