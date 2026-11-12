@@ -1,0 +1,326 @@
+{
+  "schema": "naib-editorial-candidates-v1",
+  "note": "New public guidance drafts; not loaded by live chat without review.",
+  "records": [
+    {
+      "id": "naib-editorial-001",
+      "topic": "navigation",
+      "question": "How do I choose where to begin in the ecosystem?",
+      "proposedResponse": "Identify your immediate goal, then begin at the relevant public gateway. You can revisit the choice without creating an account.",
+      "status": "draft-public-candidate",
+      "published": false,
+      "review": {
+        "publicSafety": "pending",
+        "accuracy": "pending",
+        "privacy": "pending",
+        "authority": "pending",
+        "reviewer": null,
+        "approvedAt": null
+      }
+    },
+    {
+      "id": "naib-editorial-002",
+      "topic": "academy",
+      "question": "How can I explore Academy courses without accessing private student records?",
+      "proposedResponse": "Use the public course catalogue. Personal placements, progress and family records require the authorized student or parent portal.",
+      "status": "draft-public-candidate",
+      "published": false,
+      "review": {
+        "publicSafety": "pending",
+        "accuracy": "pending",
+        "privacy": "pending",
+        "authority": "pending",
+        "reviewer": null,
+        "approvedAt": null
+      }
+    },
+    {
+      "id": "naib-editorial-003",
+      "topic": "planning",
+      "question": "Can you break a large project into manageable steps?",
+      "proposedResponse": "Yes. Describe a general goal without private credentials. I can propose a sequence, dependencies and checks, but cannot execute the steps from this public chat.",
+      "status": "draft-public-candidate",
+      "published": false,
+      "review": {
+        "publicSafety": "pending",
+        "accuracy": "pending",
+        "privacy": "pending",
+        "authority": "pending",
+        "reviewer": null,
+        "approvedAt": null
+      }
+    },
+    {
+      "id": "naib-editorial-004",
+      "topic": "status",
+      "question": "How do I tell whether a proposed change was actually completed?",
+      "proposedResponse": "Look for a verified receipt, repository commit or trusted workflow result. A suggestion or chat response alone is not proof of completion.",
+      "status": "draft-public-candidate",
+      "published": false,
+      "review": {
+        "publicSafety": "pending",
+        "accuracy": "pending",
+        "privacy": "pending",
+        "authority": "pending",
+        "reviewer": null,
+        "approvedAt": null
+      }
+    },
+    {
+      "id": "naib-editorial-005",
+      "topic": "delegation",
+      "question": "How can I reach the right specialist?",
+      "proposedResponse": "Describe the subject and I can suggest a relevant public mentor or resource. This public chat does not silently send your message to another mentor.",
+      "status": "draft-public-candidate",
+      "published": false,
+      "review": {
+        "publicSafety": "pending",
+        "accuracy": "pending",
+        "privacy": "pending",
+        "authority": "pending",
+        "reviewer": null,
+        "approvedAt": null
+      }
+    },
+    {
+      "id": "naib-editorial-006",
+      "topic": "art",
+      "question": "Where should I go for original visual art guidance?",
+      "proposedResponse": "Zelle is the public visual arts mentor. Visitors can explore art pathways while retaining ownership of their creations.",
+      "status": "draft-public-candidate",
+      "published": false,
+      "review": {
+        "publicSafety": "pending",
+        "accuracy": "pending",
+        "privacy": "pending",
+        "authority": "pending",
+        "reviewer": null,
+        "approvedAt": null
+      }
+    },
+    {
+      "id": "naib-editorial-007",
+      "topic": "music",
+      "question": "Where can I ask for music practice or composition guidance?",
+      "proposedResponse": "Moirai supports music, songwriting and creative practice through her public mentor experience.",
+      "status": "draft-public-candidate",
+      "published": false,
+      "review": {
+        "publicSafety": "pending",
+        "accuracy": "pending",
+        "privacy": "pending",
+        "authority": "pending",
+        "reviewer": null,
+        "approvedAt": null
+      }
+    },
+    {
+      "id": "naib-editorial-008",
+      "topic": "wellness",
+      "question": "Where can I find gentle, optional reflection activities?",
+      "proposedResponse": "Aurora offers nonclinical mindfulness and reflective wellness guidance. For medical questions, consult a qualified professional.",
+      "status": "draft-public-candidate",
+      "published": false,
+      "review": {
+        "publicSafety": "pending",
+        "accuracy": "pending",
+        "privacy": "pending",
+        "authority": "pending",
+        "reviewer": null,
+        "approvedAt": null
+      }
+    },
+    {
+      "id": "naib-editorial-009",
+      "topic": "support",
+      "question": "What if I need humanitarian or social-service navigation?",
+      "proposedResponse": "Hope is the support-oriented mentor. Availability, eligibility and appointments must be verified directly with a relevant human service.",
+      "status": "draft-public-candidate",
+      "published": false,
+      "review": {
+        "publicSafety": "pending",
+        "accuracy": "pending",
+        "privacy": "pending",
+        "authority": "pending",
+        "reviewer": null,
+        "approvedAt": null
+      }
+    },
+    {
+      "id": "naib-editorial-010",
+      "topic": "archives",
+      "question": "Who helps with archival research and source integrity?",
+      "proposedResponse": "ARSHIF guides broader library and archival discovery. Auren focuses on forensic conversation history and evidence continuity.",
+      "status": "draft-public-candidate",
+      "published": false,
+      "review": {
+        "publicSafety": "pending",
+        "accuracy": "pending",
+        "privacy": "pending",
+        "authority": "pending",
+        "reviewer": null,
+        "approvedAt": null
+      }
+    },
+    {
+      "id": "naib-editorial-011",
+      "topic": "family",
+      "question": "Where do parents find their student's progress?",
+      "proposedResponse": "Use authorized family access in the Academy portal. This public chat cannot retrieve learner results or verify family membership.",
+      "status": "draft-public-candidate",
+      "published": false,
+      "review": {
+        "publicSafety": "pending",
+        "accuracy": "pending",
+        "privacy": "pending",
+        "authority": "pending",
+        "reviewer": null,
+        "approvedAt": null
+      }
+    },
+    {
+      "id": "naib-editorial-012",
+      "topic": "privacy",
+      "question": "Can you store our conversation for next time?",
+      "proposedResponse": "This introductory public interface keeps the conversation in its current page session. It does not create durable memory or store protected records.",
+      "status": "draft-public-candidate",
+      "published": false,
+      "review": {
+        "publicSafety": "pending",
+        "accuracy": "pending",
+        "privacy": "pending",
+        "authority": "pending",
+        "reviewer": null,
+        "approvedAt": null
+      }
+    },
+    {
+      "id": "naib-editorial-013",
+      "topic": "authority",
+      "question": "Can you approve a private account change?",
+      "proposedResponse": "No. Protected account and administrative decisions require verified authority and the appropriate governed system.",
+      "status": "draft-public-candidate",
+      "published": false,
+      "review": {
+        "publicSafety": "pending",
+        "accuracy": "pending",
+        "privacy": "pending",
+        "authority": "pending",
+        "reviewer": null,
+        "approvedAt": null
+      }
+    },
+    {
+      "id": "naib-editorial-014",
+      "topic": "research",
+      "question": "What information makes a research source credible?",
+      "proposedResponse": "Look at authorship, date, provenance, primary evidence, independent corroboration and clear distinctions between fact and interpretation.",
+      "status": "draft-public-candidate",
+      "published": false,
+      "review": {
+        "publicSafety": "pending",
+        "accuracy": "pending",
+        "privacy": "pending",
+        "authority": "pending",
+        "reviewer": null,
+        "approvedAt": null
+      }
+    },
+    {
+      "id": "naib-editorial-015",
+      "topic": "language",
+      "question": "Where can I learn French or another language?",
+      "proposedResponse": "Explore Khaemenes Academy language pathways. Pierre is the multilingual mentor for language guidance.",
+      "status": "draft-public-candidate",
+      "published": false,
+      "review": {
+        "publicSafety": "pending",
+        "accuracy": "pending",
+        "privacy": "pending",
+        "authority": "pending",
+        "reviewer": null,
+        "approvedAt": null
+      }
+    },
+    {
+      "id": "naib-editorial-016",
+      "topic": "testing",
+      "question": "How can I report a problem on a public page?",
+      "proposedResponse": "Identify the page, visible section, device context and observed behavior without including credentials or private student information.",
+      "status": "draft-public-candidate",
+      "published": false,
+      "review": {
+        "publicSafety": "pending",
+        "accuracy": "pending",
+        "privacy": "pending",
+        "authority": "pending",
+        "reviewer": null,
+        "approvedAt": null
+      }
+    },
+    {
+      "id": "naib-editorial-017",
+      "topic": "accessibility",
+      "question": "Can you help me navigate an unfamiliar portal?",
+      "proposedResponse": "Yes. Tell me the public page or feature you need and I can suggest a clear next step. I cannot see or control private account screens from this chat.",
+      "status": "draft-public-candidate",
+      "published": false,
+      "review": {
+        "publicSafety": "pending",
+        "accuracy": "pending",
+        "privacy": "pending",
+        "authority": "pending",
+        "reviewer": null,
+        "approvedAt": null
+      }
+    },
+    {
+      "id": "naib-editorial-018",
+      "topic": "uncertainty",
+      "question": "How should you respond when a public page seems outdated?",
+      "proposedResponse": "Clearly label uncertainty, refer to the current public source, and avoid inventing availability, status or actions.",
+      "status": "draft-public-candidate",
+      "published": false,
+      "review": {
+        "publicSafety": "pending",
+        "accuracy": "pending",
+        "privacy": "pending",
+        "authority": "pending",
+        "reviewer": null,
+        "approvedAt": null
+      }
+    },
+    {
+      "id": "naib-editorial-019",
+      "topic": "specialists",
+      "question": "Does NAIB replace all the other mentors?",
+      "proposedResponse": "No. NAIB helps coordinate public entry points; each specialist maintains a distinct subject and identity.",
+      "status": "draft-public-candidate",
+      "published": false,
+      "review": {
+        "publicSafety": "pending",
+        "accuracy": "pending",
+        "privacy": "pending",
+        "authority": "pending",
+        "reviewer": null,
+        "approvedAt": null
+      }
+    },
+    {
+      "id": "naib-editorial-020",
+      "topic": "credentials",
+      "question": "Should I paste an account password into this chat?",
+      "proposedResponse": "No. Never enter passwords, codes, credentials or private learner information into a public mentor conversation.",
+      "status": "draft-public-candidate",
+      "published": false,
+      "review": {
+        "publicSafety": "pending",
+        "accuracy": "pending",
+        "privacy": "pending",
+        "authority": "pending",
+        "reviewer": null,
+        "approvedAt": null
+      }
+    }
+  ]
+}
