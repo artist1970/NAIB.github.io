@@ -37,6 +37,12 @@ function respond(input){
  if(/^(tell me more|what next|continue|another option|go on)$/.test(q)&&lastTopic)
   return "We were exploring "+lastTopic+". Would you like the public doorway, a simple next-step plan, or a specialist introduction? No action has been executed.";
  const direct=ranked(raw);if(direct){lastTopic=direct.topic;return direct.response;}
+ const safeAcademic=/\b(?:poetry|literature|grammar|language learning|music theory|painting|drawing|art technique|study strategy)\b/i.test(raw);
+ const consequential=/\b(?:housing|benefits|medical|health|crisis|emergency|financial|legal|account|personal data|student|grades|permission)\b/i.test(raw);
+ if(safeAcademic&&!consequential){
+  const ref=root.CreativeSparkMentorQA?.answer(raw,{mentorId:"naib",scope:"public-routing"});
+  if(ref)return "Public specialist reference from "+ref.sourceName+": "+ref.answer+" (Source: "+ref.sourceName+" · "+ref.topic+".) This is guidance, not an administrative action.";
+ }
  const domain=domains.find(([_,phrases])=>phrases.some(p=>q.includes(p)))?.[0];
  if(domain){
   lastTopic=domain;
@@ -44,12 +50,7 @@ function respond(input){
   if(record&&/\b(?:where do i start|how do i begin|first step|beginner)\b/.test(q))return record.response;
   return "I can help you navigate "+domain+". Are you looking for the appropriate public page, a specialist, or a suggested plan? I won't claim that anything has been completed.";
  }
- const safeAcademic=/\b(?:poetry|literature|grammar|language learning|music theory|painting|drawing|art technique|study strategy)\b/i.test(raw);
- const consequential=/\b(?:housing|benefits|medical|health|crisis|emergency|financial|legal|account|personal data|student|grades|permission)\b/i.test(raw);
- if(safeAcademic&&!consequential){
-  const ref=root.CreativeSparkMentorQA?.answer(raw,{mentorId:"naib",scope:"public-routing"});
-  if(ref)return "Public specialist reference from "+ref.sourceName+": "+ref.answer+" (Source: "+ref.sourceName+" · "+ref.topic+".) This is guidance, not an administrative action.";
- }
+
  return "I can help identify an appropriate public resource, specialist, or next-step proposal. Which goal matters most to you? I cannot verify private status or claim an action occurred here.";
 }
 root.NAIBPublicConversation=Object.freeze({ready,respond,reset,status:()=>state,count:()=>records.length});
